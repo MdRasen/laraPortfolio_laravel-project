@@ -16,6 +16,5 @@ class dashboardController extends Controller
 
         // return view("admin.dashboard", compact('numCategory', 'numPost', 'numUser', 'posts'));
         return view("admin.dashboard");
-        // echo "ok";
     }
 }

@@ -16,7 +16,7 @@
             <div class="blog-item padd-15">
                 <div class="blog-item-inner">
                     <div class="image">
-                        <img src="images/portfolio/portfolio-1.jpg" alt="">
+                        <img src="{{asset('public-assets/images/portfolio/portfolio-1.jpg')}}" alt="">
                     </div>
                     <div class="blog-info">
                         <div class="category">
@@ -42,7 +42,7 @@
             <div class="blog-item padd-15">
                 <div class="blog-item-inner">
                     <div class="image">
-                        <img src="images/portfolio/portfolio-2.jpg" alt="">
+                        <img src="{{asset('public-assets/images/portfolio/portfolio-2.jpg')}}" alt="">
                     </div>
                     <div class="blog-info">
                         <div class="category">
@@ -68,7 +68,7 @@
             <div class="blog-item padd-15">
                 <div class="blog-item-inner">
                     <div class="image">
-                        <img src="images/portfolio/portfolio-3.jpg" alt="">
+                        <img src="{{asset('public-assets/images/portfolio/portfolio-3.jpg')}}" alt="">
                     </div>
                     <div class="blog-info">
                         <div class="category">
@@ -94,7 +94,7 @@
             <div class="blog-item padd-15">
                 <div class="blog-item-inner">
                     <div class="image">
-                        <img src="images/portfolio/portfolio-4.jpg" alt="">
+                        <img src="{{asset('public-assets/images/portfolio/portfolio-4.jpg')}}" alt="">
                     </div>
                     <div class="blog-info">
                         <div class="category">
@@ -120,7 +120,7 @@
             <div class="blog-item padd-15">
                 <div class="blog-item-inner">
                     <div class="image">
-                        <img src="images/portfolio/portfolio-5.jpg" alt="">
+                        <img src="{{asset('public-assets/images/portfolio/portfolio-5.jpg')}}" alt="">
                     </div>
                     <div class="blog-info">
                         <div class="category">
@@ -146,7 +146,7 @@
             <div class="blog-item padd-15">
                 <div class="blog-item-inner">
                     <div class="image">
-                        <img src="images/portfolio/portfolio-6.jpg" alt="">
+                        <img src="{{asset('public-assets/images/portfolio/portfolio-6.jpg')}}" alt="">
                     </div>
                     <div class="blog-info">
                         <div class="category">

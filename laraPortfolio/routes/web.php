@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\dashboardController;
 
 /*
@@ -20,9 +21,7 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Public Routes
-Route::get('/', function () {
-    return view('public.index');
-});
+Route::get('/', [publicController::class,'index'])->name('public.index');
 
 //Admin Routes
 Route::prefix('admin')->middleware(['auth'])->group(function () {
