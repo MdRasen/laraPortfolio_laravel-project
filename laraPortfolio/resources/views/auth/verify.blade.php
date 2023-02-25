@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'laraPortfolio - Verify')
 
 @section('content')
 <div class="container">
