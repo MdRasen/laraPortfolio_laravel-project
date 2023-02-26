@@ -19,8 +19,6 @@
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('admin.logo-fav') }}">Logo & Favicon</a>
-                        <a class="nav-link" href="{{ route('admin.create-menu') }}">Create Menu</a>
-                        <a class="nav-link" href="{{ route('admin.view-menu') }}">View Menu</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"

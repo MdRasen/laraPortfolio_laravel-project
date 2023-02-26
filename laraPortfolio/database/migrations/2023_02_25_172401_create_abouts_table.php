@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('freelance')->nullable();
             $table->string('website_link')->nullable();
-            $table->string('favicon')->nullable();
+            $table->string('favicon')->nullable()->default(0);
             $table->string('cv_file')->nullable();
             $table->Integer('created_by');
             $table->timestamps();

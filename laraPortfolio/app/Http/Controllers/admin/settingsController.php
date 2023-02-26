@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\menu;
 use App\Models\about;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +13,7 @@ class settingsController extends Controller
 {
     function logo_fav()
     {
-        $about = about::where('id', '=', Auth::user()->id)->first();
+        $about = about::where('created_by', '=', Auth::user()->id)->first();
         return view("admin.setting-control.logo-fav", compact('about'));
     }
 
@@ -23,7 +25,7 @@ class settingsController extends Controller
                 "nickname" => "required|string|max:10",
             ]
         );
-        $about = about::where('id', '=', Auth::user()->id)->first();
+        $about = about::where('created_by', '=', Auth::user()->id)->first();
         if (!$about) {
             $about = new about();
             $about->nickname = $req->nickname;
@@ -53,41 +55,22 @@ class settingsController extends Controller
         $extension = $req->file('favicon')->getClientOriginalExtension();
         $ficonname = Auth::user()->id . time() . "." . $extension;
 
-        $req->file('favicon')->storeAs('public/favicon', $ficonname);
+        $req->file('favicon')->storeAs('public/favicon/', $ficonname);
 
-        $about = about::where('id', '=', Auth::user()->id)->first();
+        $about = about::where('created_by', '=', Auth::user()->id)->first();
         if (!$about) {
             $about = new about();
             $about->favicon = $ficonname;
             $about->created_by = Auth::user()->id;
             $about->save();
-            return redirect('admin/logo-fav')->with('fav_msg', 'Favicom has been updated successfully!');
         } else {
-
-            if ($about->favicon) {
-                $destination = 'storage/favicon/' . $about->favicon;
-                if (file_exists(public_path($destination))) {
-                    unlink($destination);
-                }
-                $about->favicon = $ficonname;
-                $about->update();
-                return redirect('admin/logo-fav')->with('fav_msg', 'Favicom has been updated successfully!');
+            $destination = 'storage/favicon/' . $about->favicon;
+            if (file_exists(public_path($destination))) {
+                unlink($destination);
             }
+            $about->favicon = $ficonname;
+            $about->update();
         }
-    }
-
-    function createmenu()
-    {
-        return view("admin.setting-control.menu.create-menu");
-    }
-
-    function viewmenu()
-    {
-        return view("admin.setting-control.menu.view-menu");
-    }
-
-    function updatemenu()
-    {
-        return view("admin.setting-control.menu.update-menu");
+        return redirect('admin/logo-fav')->with('fav_msg', 'Favicon has been updated successfully!');
     }
 }

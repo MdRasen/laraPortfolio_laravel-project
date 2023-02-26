@@ -13,7 +13,13 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="text-secondary">Previous</h4>
-                                <h3 class="text-center mt-4 pb-4">{{ $about->nickname ? $about->nickname : 'Atlas' }}</h3>
+                                <h3 class="text-center mt-4 pb-4">
+                                    @if ($about)
+                                        {{ $about->nickname }}
+                                    @else
+                                        Atlas
+                                    @endif
+                                </h3>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('admin.logo-update') }}" method="POST">
@@ -48,13 +54,13 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="text-secondary">Previous</h4>
-                                @if ($about->favicon == null)
-                                    <img class="rounded mx-auto d-block" width="80px" height="80px"
-                                        src="{{ asset('public-assets/images/fabicon.png') }}" alt="favicon">
-                                    </h3>
-                                @else
+
+                                @if ($about)
                                     <img class="rounded mx-auto d-block" width="80px" height="80px"
                                         src="{{ asset('storage/favicon') }}/{{ $about->favicon }}" alt="favicon">
+                                @else
+                                    <img class="rounded mx-auto d-block" width="80px" height="80px"
+                                        src="{{ asset('public-assets/images/fabicon.png') }}" alt="favicon">
                                 @endif
                             </div>
                             <div class="card-body">

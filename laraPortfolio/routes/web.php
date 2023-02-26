@@ -30,9 +30,6 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/logo-fav', [settingsController::class, 'logo_fav'])->name('admin.logo-fav');
     Route::post('/logo', [settingsController::class, 'logo_update'])->name('admin.logo-update');
     Route::post('/logo-fav', [settingsController::class, 'fav_update'])->name('admin.fav-update');
-    Route::get('/create-menu', [settingsController::class, 'createmenu'])->name('admin.create-menu');
-    Route::get('/view-menu', [settingsController::class, 'viewmenu'])->name('admin.view-menu');
-    Route::get('/update-menu', [settingsController::class, 'updatemenu'])->name('admin.update-menu');
 });
 
 //Public Routes
