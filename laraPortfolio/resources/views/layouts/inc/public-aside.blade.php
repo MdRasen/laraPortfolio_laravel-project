@@ -2,8 +2,6 @@
 <div class="aside">
     <div class="logo">
         <a href="index.html"><span>A</span>tlas</a>
-        {{-- <img width="80px" height="80px" src="{{ asset('admin-assets\assets\img\here.png') }}" alt="favicon"> --}}
-
     </div>
     <div class="nav-toggler">
         <span></span>

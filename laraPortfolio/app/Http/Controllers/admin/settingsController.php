@@ -11,7 +11,8 @@ class settingsController extends Controller
 {
     function logo_fav()
     {
-        return view("admin.setting-control.logo-fav");
+        $about = about::where('id', '=', Auth::user()->id)->first();
+        return view("admin.setting-control.logo-fav", compact('about'));
     }
 
     function logo_update(Request $req)
@@ -41,7 +42,7 @@ class settingsController extends Controller
         $this->validate(
             $req,
             [
-                "favicon" => "required|mimes:jpg,png,jpeg",
+                "favicon" => "required|mimes:jpg,png,jpeg,svg",
             ],
             [
                 'favicon.required' => 'Please select a picture!',
@@ -62,9 +63,16 @@ class settingsController extends Controller
             $about->save();
             return redirect('admin/logo-fav')->with('fav_msg', 'Favicom has been updated successfully!');
         } else {
-            $about->favicon = $ficonname;
-            $about->update();
-            return redirect('admin/logo-fav')->with('fav_msg', 'Favicom has been updated successfully!');
+
+            if ($about->favicon) {
+                $destination = 'storage/favicon/' . $about->favicon;
+                if (file_exists(public_path($destination))) {
+                    unlink($destination);
+                }
+                $about->favicon = $ficonname;
+                $about->update();
+                return redirect('admin/logo-fav')->with('fav_msg', 'Favicom has been updated successfully!');
+            }
         }
     }
 

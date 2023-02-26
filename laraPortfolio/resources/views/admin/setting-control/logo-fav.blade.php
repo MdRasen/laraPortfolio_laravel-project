@@ -12,16 +12,16 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <img class="rounded mx-auto d-block" width="80px" height="80px"
-                                    src="{{ asset('admin-assets\assets\img\here.png') }}" alt="favicon">
+                                <h4 class="text-secondary">Previous</h4>
+                                <h3 class="text-center mt-4 pb-4">{{ $about->nickname ? $about->nickname : 'Atlas' }}</h3>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('admin.logo-update') }}" method="POST">
                                     @csrf
                                     <div class="form-floating mb-3">
                                         <input class="form-control" name="nickname" id="inputNickname" type="text"
-                                            placeholder="Nickname" value="{{ old('nickname') }}" />
-                                        <label for="inputNickname">Nickname</label>
+                                            placeholder="Nicknam" value="{{ old('nickname') }}" />
+                                        <label for="inputNickname">Enter Your Nickname</label>
                                         <p style="color:red;">
                                             @error('nickname')
                                                 *{{ $message }}
@@ -47,15 +47,26 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <img class="rounded mx-auto d-block" width="80px" height="80px"
-                                    src="{{ asset('public-assets/images/fabicon.png') }}" alt="favicon">
-                                </h3>
+                                <h4 class="text-secondary">Previous</h4>
+                                @if ($about->favicon == null)
+                                    <img class="rounded mx-auto d-block" width="80px" height="80px"
+                                        src="{{ asset('public-assets/images/fabicon.png') }}" alt="favicon">
+                                    </h3>
+                                @else
+                                    <img class="rounded mx-auto d-block" width="80px" height="80px"
+                                        src="{{ asset('storage/favicon') }}/{{ $about->favicon }}" alt="favicon">
+                                @endif
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('admin.fav-update') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-floating mb-3">
                                         <input type="file" name="favicon" class="form-control">
+                                        <p style="color:red;">
+                                            @error('favicon')
+                                                *{{ $message }}
+                                            @enderror
+                                        </p>
                                     </div>
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid"><button type="submit" class="btn btn-primary btn-block">Update
