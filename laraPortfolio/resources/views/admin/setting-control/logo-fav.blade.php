@@ -24,23 +24,27 @@
                             <div class="card-body">
                                 <form action="{{ route('admin.logo-update') }}" method="POST">
                                     @csrf
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" name="nickname" id="inputNickname" type="text"
-                                            placeholder="Nicknam" value="{{ old('nickname') }}" />
-                                        <label for="inputNickname">Enter Your Nickname</label>
-                                        <p style="color:red;">
-                                            @error('nickname')
-                                                *{{ $message }}
-                                            @enderror
-                                        </p>
+                                    <div class="row form-group">
+                                        <div class="form-group">
+                                            <label>Nickname</label>
+                                            <input type="text" class="form-control" name="nickname"
+                                                value="{{ $about ? $about->nickname : 'Atlas' }}" placeholder="Nickname">
+                                            <p style="color:red;">
+                                                @error('nickname')
+                                                    *{{ $message }}
+                                                @enderror
+                                            </p>
+                                        </div>
                                     </div>
+
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid">
                                             <button type="submit" class="btn btn-primary btn-block">Generate/Update
                                                 Logo</button>
                                         </div>
                                         @if (session('logo_msg'))
-                                            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                            <div class="alert alert-success alert-dismissible fade show mt-3"
+                                                role="alert">
                                                 <strong>Holy guacamole!</strong> {{ session('logo_msg') }}
                                             </div>
                                         @endif
@@ -66,19 +70,25 @@
                             <div class="card-body">
                                 <form action="{{ route('admin.fav-update') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="form-floating mb-3">
-                                        <input type="file" name="favicon" class="form-control">
-                                        <p style="color:red;">
-                                            @error('favicon')
-                                                *{{ $message }}
-                                            @enderror
-                                        </p>
+
+                                    <div class="row form-group">
+                                        <div class="form-group">
+                                            <label>Favicon</label>
+                                            <input type="file" class="form-control" name="favicon" placeholder="Favicon">
+                                            <p style="color:red;">
+                                                @error('favicon')
+                                                    *{{ $message }}
+                                                @enderror
+                                            </p>
+                                        </div>
                                     </div>
+
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid"><button type="submit" class="btn btn-primary btn-block">Update
                                                 Favicon</button></div>
                                         @if (session('fav_msg'))
-                                            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                            <div class="alert alert-success alert-dismissible fade show mt-3"
+                                                role="alert">
                                                 <strong>Holy guacamole!</strong> {{ session('fav_msg') }}
                                             </div>
                                         @endif

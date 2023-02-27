@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'laraPortfolio - View About')
+@section('title', 'laraPortfolio - Edit About')
 @section('content')
     <div class="container-fluid px-3">
         <div class="card mt-4">
@@ -8,129 +8,218 @@
                         View</a></h4>
             </div>
             <div class="card-body">
+                @if (session('msg'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Holy guacamole!</strong> {{ session('msg') }}
+                    </div>
+                @endif
+
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
+                    <div class="card">
+                        <div class="card-body">
 
-                            <div class="card-body">
-                                <div class="card-body text-center">
-                                    @if ($about->image == null)
-                                        <img src="{{ asset('public-assets/images/hero.jpg') }}"
-                                            alt="admin avatar" class="img-fluid mt-5" style="height: 150px">
-                                    @else
-                                        <img src="{{ asset('storage/admin_images') }}/{{ $about->profile_pic }}"
-                                            alt="admin avatar" class="img-fluid mt-5" style="height: 150px">
-                                    @endif
-
-                                    <h5 class="mt-5">{{ $about->nickname != null ? $about->nickname : 'Atlas' }}</h5>
-                                    <p class="text-muted my-2">Admin, laraEshop</p>
-                                    <p class="text-muted my-2">
-                                        {{ $about->address != null ? $about->address : 'Address not updated!' }}</p>
-
-                                    <div class="pt-2">
-                                        <form action="#" method="POST" enctype="multipart/form-data">
-                                            @csrf
-                                            <input type="file" name="profile_pic" class="form-control mt-3">
-                                            <p class="text-right" style="color:red;">
-                                                @error('profile_pic')
+                            <form action="{{route('admin.edit-about')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="row form-group">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Full Name</label>
+                                            <input type="text" class="form-control" name="full_name"
+                                                value="{{ $about->full_name }}" placeholder="Full Name">
+                                            <p style="color:red;">
+                                                @error('full_name')
                                                     *{{ $message }}
                                                 @enderror
                                             </p>
-                                            <button type="submit" class="btn btn-outline-primary btn-block"
-                                                style="margin: 30px 0px 10px">Update Profile Image</button>
-                                        </form>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Nickname</label>
+                                            <input type="text" class="form-control" name="nickname"
+                                                value="{{ $about->nickname }}" placeholder="Nickname">
+                                            <p style="color:red;">
+                                                @error('nickname')
+                                                    *{{ $message }}
+                                                @enderror
+                                            </p>
+                                        </div>
+                                    </div>
 
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Designation</label>
+                                            <input type="text" class="form-control" name="designation"
+                                                value="{{ $about->designation }}" placeholder="Designation">
+                                            <p style="color:red;">
+                                                @error('designation')
+                                                    *{{ $message }}
+                                                @enderror
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-12">
+                                        <label>Short Description</label>
+                                        <textarea class="form-control" name="short_description" rows="2" placeholder="Short description">{{ $about->short_description }}</textarea>
+                                        <p style="color:red;">
+                                            @error('short_description')
+                                                *{{ $message }}
+                                            @enderror
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                            <label>Degree</label>
+                                            <input type="text" class="form-control" name="degree"
+                                                value="{{ $about->degree }}" placeholder="Degree">
+                                            <p style="color:red;">
+                                                @error('degree')
+                                                    *{{ $message }}
+                                                @enderror
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <select class="form-control" name="gender">
+                                                <option value="Male" {{ $about->gender == 'Male' ? 'selected' : '' }}>
+                                                    Male
+                                                </option>
+                                                <option value="Female" {{ $about->gender == 'Female' ? 'selected' : '' }}>
+                                                    Female</option>
+                                                <option value="Others" {{ $about->gender == 'Others' ? 'selected' : '' }}>
+                                                    Others</option>
+                                            </select>
+                                            <p style="color:red;">
+                                                @error('gender')
+                                                    *{{ $message }}
+                                                @enderror
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <label>Birthday</label>
+                                            <input type="date" class="form-control" name="birthday"
+                                                value="{{ $about->birthday }}" placeholder="Birthday">
+                                            <p style="color:red;">
+                                                @error('birthday')
+                                                    *{{ $message }}
+                                                @enderror
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label>Age</label>
+                                                <input type="number" class="form-control" name="age"
+                                                    value="{{ $about->age }}" placeholder="Age">
+                                                <p style="color:red;">
+                                                    @error('age')
+                                                        *{{ $message }}
+                                                    @enderror
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="email" class="form-control" name="email"
+                                                    value="{{ $about->email }}" placeholder="Email">
+                                                <p style="color:red;">
+                                                    @error('email')
+                                                        *{{ $message }}
+                                                    @enderror
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <input type="text" class="form-control" name="phone"
+                                                    value="{{ $about->phone }}" placeholder="phone">
+                                                <p style="color:red;">
+                                                    @error('phone')
+                                                        *{{ $message }}
+                                                    @enderror
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Full Name</p>
-                                        <p class="text-muted mb-0">{{ $about->full_name != null ? $about->full_name : 'Atlas' }}</p>
+                                    <div class="row form-group">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <input type="text" class="form-control" name="city"
+                                                    value="{{ $about->city }}" placeholder="City">
+                                                <p style="color:red;">
+                                                    @error('city')
+                                                        *{{ $message }}
+                                                    @enderror
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Freelance</label>
+                                                <select class="form-control" name="freelance">
+                                                    <option value="Available"
+                                                        {{ $about->freelance == 'Available' ? 'selected' : '' }}>Available
+                                                    </option>
+                                                    <option value="No"
+                                                        {{ $about->freelance == 'No' ? 'selected' : '' }}>
+                                                        No</option>
+                                                </select>
+                                                <p style="color:red;">
+                                                    @error('freelance')
+                                                        *{{ $message }}
+                                                    @enderror
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Nickname</p>
-                                        <p class="text-muted mb-0">{{ $about->nickname != null ? $about->nickname : 'Atlas' }}</p>
+
+                                    <div class="row form-group">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Website</label>
+                                                <input type="text" class="form-control" name="website_link"
+                                                    value="{{ $about->website_link }}" placeholder="Website Link">
+                                                <p style="color:red;">
+                                                    @error('website_link')
+                                                        *{{ $message }}
+                                                    @enderror
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>CV File</label>
+                                                <input type="file" class="form-control" name="my_file">
+                                                <p style="color:red;">
+                                                    @error('my_file')
+                                                        *{{ $message }}
+                                                    @enderror
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Short Description</p>
+
+                                    <div class="row form-group">
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-primary mr-2">Update</button>
+                                            <a href="{{ route('admin.view-about') }}" class="btn btn-light">Cancel</a>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p class="text-muted mb-0">{{ $about->short_description != null ? $about->short_description : '                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam enim, itaque culpa expedita reiciendis voluptates.
-                                            ' }}</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Birthday</p>
-                                        <p class="text-muted mb-0">{{ $about->birthday != null ? $about->birthday : '25 July, 1999' }}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Age</p>
-                                        <p class="text-muted mb-0">{{ $about->age != null ? $about->age : '23' }}</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Gender</p>
-                                        <p class="text-muted mb-0">{{ $about->gender != null ? $about->gender : 'Male' }}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Email</p>
-                                        <p class="text-muted mb-0">{{ $about->email != null ? $about->email : 'info@gmail.com' }}</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Phone</p>
-                                        <p class="text-muted mb-0">{{ $about->phone != null ? $about->phone : '123456789' }}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Degree</p>
-                                        <p class="text-muted mb-0">{{ $about->degree != null ? $about->degree : 'BSc CSE' }}</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="mb-0">City</p>
-                                        <p class="text-muted mb-0">{{ $about->city != null ? $about->city : 'Dhaka, Bangladesh' }}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Freelance</p>
-                                        <p class="text-muted mb-0">{{ $about->freelance != null ? $about->freelance : 'Available' }}</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="mb-0">Website</p>
-                                        <p class="text-muted mb-0">{{ $about->website_link != null ? $about->website_link : 'www.domain.com' }}</p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="mb-0">CV</p>
-                                        <p class="text-muted mb-0">{{ $about->cv_file != null ? $about->cv_file : 'Not Given' }}</p>
-                                    </div>
-                                </div>
-                                <div class="row pt-4">
-                                    <div class="justify-content-center">
-                                        <a href="#" class="btn btn-primary mr-1">Edit Profile</a>
-                                        <button type="button" class="btn btn-outline-primary">Change Password</button>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>

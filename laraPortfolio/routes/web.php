@@ -36,6 +36,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/about/view-about', [aboutController::class, 'viewabout'])->name('admin.view-about');
     Route::post('/about/view-about', [aboutController::class,'updateImage'])->name('admin.about.update-image');
     Route::get('about/edit-about', [aboutController::class, 'editabout'])->name('admin.edit-about');
+    Route::post('about/edit-about', [aboutController::class, 'editaboutSubmit'])->name('admin.edit-about');
 });
 
 //Public Routes

@@ -72,14 +72,17 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p class="mb-0">Short Description</p>
-                                    </div>
-                                    <div class="col-md-6">
                                         <p class="text-muted mb-0">
                                             {{ $about->short_description != null
                                                 ? $about->short_description
                                                 : '                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam enim, itaque culpa expedita reiciendis voluptates.
                                                                                                                                     ' }}
                                         </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-0">Designation</p>
+                                        <p class="text-muted mb-0">
+                                            {{ $about->designation != null ? $about->designation : 'Web Developer' }}</p>
                                     </div>
                                 </div>
                                 <hr>
