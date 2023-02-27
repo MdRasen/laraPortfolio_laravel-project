@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\admin\dashboardController;
@@ -30,6 +31,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/logo-fav', [settingsController::class, 'logo_fav'])->name('admin.logo-fav');
     Route::post('/logo', [settingsController::class, 'logo_update'])->name('admin.logo-update');
     Route::post('/logo-fav', [settingsController::class, 'fav_update'])->name('admin.fav-update');
+
+    // About Settings
+    Route::get('/about/view-about', [aboutController::class, 'viewabout'])->name('admin.view-about');
+    Route::post('/about/view-about', [aboutController::class,'updateImage'])->name('admin.about.update-image');
+    Route::get('about/edit-about', [aboutController::class, 'editabout'])->name('admin.edit-about');
 });
 
 //Public Routes

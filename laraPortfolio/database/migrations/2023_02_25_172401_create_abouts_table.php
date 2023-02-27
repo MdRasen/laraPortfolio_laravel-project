@@ -19,6 +19,7 @@ return new class extends Migration
             $table->mediumText('short_description')->nullable();
             $table->string('birthday')->nullable();
             $table->string('age')->nullable();
+            $table->string('gender')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('degree')->nullable();

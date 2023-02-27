@@ -40,8 +40,8 @@
                                                 Logo</button>
                                         </div>
                                         @if (session('logo_msg'))
-                                            <div class="alert alert-success mt-3" role="alert">
-                                                {{ session('logo_msg') }}
+                                            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                                <strong>Holy guacamole!</strong> {{ session('logo_msg') }}
                                             </div>
                                         @endif
                                     </div>
@@ -78,8 +78,8 @@
                                         <div class="d-grid"><button type="submit" class="btn btn-primary btn-block">Update
                                                 Favicon</button></div>
                                         @if (session('fav_msg'))
-                                            <div class="alert alert-success mt-3" role="alert">
-                                                {{ session('fav_msg') }}
+                                            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                                <strong>Holy guacamole!</strong> {{ session('fav_msg') }}
                                             </div>
                                         @endif
                                     </div>
