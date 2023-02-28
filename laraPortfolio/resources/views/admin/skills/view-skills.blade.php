@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'laraPortfolio - View SKills')
+@section('title', 'laraPortfolio - View Skills')
 @section('content')
     <div class="container-fluid px-3">
         <div class="card mt-4">
@@ -38,7 +38,8 @@
                                                 <td>
                                                     <a href="{{ route('admin.edit-skills', ['skill_id' => $item->id]) }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-danger">Delete</a>
+                                                    <a href="{{ route('admin.delete-skills', ['skill_id' => $item->id]) }}"
+                                                        class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

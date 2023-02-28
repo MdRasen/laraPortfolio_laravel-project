@@ -95,9 +95,9 @@
                                             <tbody>
                                                 @foreach ($skills as $item)
                                                     <tr>
-                                                        <td>{{$item->skill_name}}</td>
-                                                        <td>{{$item->sort}}</td>
-                                                        <td>{{$item->status}}</td>
+                                                        <td>{{ $item->skill_name }}</td>
+                                                        <td>{{ $item->sort }}</td>
+                                                        <td>{{ $item->status }}</td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>

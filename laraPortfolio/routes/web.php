@@ -45,6 +45,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/skills/view-skills', [skillsController::class, 'viewSkills'])->name('admin.view-skills');
     Route::get('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkills'])->name('admin.edit-skills');
     Route::post('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkillsSubmit'])->name('admin.edit-skills');
+    Route::get('/skills/delete-skills/{skill_id}', [skillsController::class, 'deleteSkills'])->name('admin.delete-skills');
 });
 
 //Public Routes

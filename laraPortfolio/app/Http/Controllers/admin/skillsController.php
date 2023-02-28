@@ -12,9 +12,10 @@ class skillsController extends Controller
 {
     public function createSkills()
     {
-        $skills = skill::where('created_by', '=', Auth::user()->id)->where('status', '=', "Active")->get();
+        $skills = skill::where('created_by', '=', Auth::user()->id)->get();
         return view('admin.skills.create-skills', compact('skills'));
     }
+
     public function createSkillsSubmit(Request $req)
     {
         $this->validate(
@@ -38,17 +39,20 @@ class skillsController extends Controller
         $skill->save();
         return Redirect::back()->with('msg', 'Skill has been created successfully!');
     }
+
     public function viewSkills()
     {
         $skills = skill::where('created_by', '=', Auth::user()->id)->get();
         return view('admin.skills.view-skills', compact('skills'));
     }
+
     public function editSkills($skill_id)
     {
         $skill = skill::where('id', '=', $skill_id)->first();
-        $skills = skill::where('created_by', '=', Auth::user()->id)->where('status', '=', "Active")->get();
+        $skills = skill::where('created_by', '=', Auth::user()->id)->get();
         return view('admin.skills.update-skills', compact('skill', 'skills'));
     }
+
     public function editSkillsSubmit(Request $req)
     {
         $this->validate(
@@ -69,5 +73,12 @@ class skillsController extends Controller
         $skill->status = $req->status;
         $skill->update();
         return Redirect::back()->with('msg', 'Skill has been updated successfully!');
+    }
+
+    public function deleteSkills($skill_id)
+    {
+        $skill = skill::where('id', '=', $skill_id)->first();
+        $skill->delete();
+        return Redirect::back()->with('msg', 'Skill has been deleted successfully!');
     }
 }
