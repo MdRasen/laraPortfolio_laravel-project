@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form action="{{route('admin.edit-about')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.edit-about') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row form-group">
                                     <div class="col-sm-4">
@@ -95,11 +95,6 @@
                                                 <option value="Others" {{ $about->gender == 'Others' ? 'selected' : '' }}>
                                                     Others</option>
                                             </select>
-                                            <p style="color:red;">
-                                                @error('gender')
-                                                    *{{ $message }}
-                                                @enderror
-                                            </p>
                                         </div>
                                     </div>
                                     <div class="col-sm-5">
@@ -177,11 +172,6 @@
                                                         {{ $about->freelance == 'No' ? 'selected' : '' }}>
                                                         No</option>
                                                 </select>
-                                                <p style="color:red;">
-                                                    @error('freelance')
-                                                        *{{ $message }}
-                                                    @enderror
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -192,11 +182,6 @@
                                                 <label>Website</label>
                                                 <input type="text" class="form-control" name="website_link"
                                                     value="{{ $about->website_link }}" placeholder="Website Link">
-                                                <p style="color:red;">
-                                                    @error('website_link')
-                                                        *{{ $message }}
-                                                    @enderror
-                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">

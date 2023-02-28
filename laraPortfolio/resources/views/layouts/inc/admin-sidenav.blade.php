@@ -42,8 +42,8 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Add New Skills</a>
-                        <a class="nav-link" href="#">Skill List</a>
+                        <a class="nav-link" href="{{route('admin.create-skills')}}">Add New Skills</a>
+                        <a class="nav-link" href="{{route('admin.view-skills')}}">Skill List</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"

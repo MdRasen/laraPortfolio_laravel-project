@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\aboutController;
+use App\Http\Controllers\admin\skillsController;
 use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\admin\dashboardController;
@@ -37,6 +38,13 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/about/view-about', [aboutController::class,'updateImage'])->name('admin.about.update-image');
     Route::get('about/edit-about', [aboutController::class, 'editabout'])->name('admin.edit-about');
     Route::post('about/edit-about', [aboutController::class, 'editaboutSubmit'])->name('admin.edit-about');
+
+    // Skills
+    Route::get('/skills/create-skills', [skillsController::class, 'createSkills'])->name('admin.create-skills');
+    Route::post('/skills/create-skills', [skillsController::class, 'createSkillsSubmit'])->name('admin.create-skills');
+    Route::get('/skills/view-skills', [skillsController::class, 'viewSkills'])->name('admin.view-skills');
+    Route::get('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkills'])->name('admin.edit-skills');
+    Route::post('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkillsSubmit'])->name('admin.edit-skills');
 });
 
 //Public Routes

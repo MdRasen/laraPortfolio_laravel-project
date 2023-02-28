@@ -66,7 +66,7 @@ class aboutController extends Controller
                 "short_description" => "required",
                 "degree" => "required",
                 "birthday" => "required",
-                "email" => "required|numeric",
+                "age" => "required|numeric",
                 "email" => "required|email",
                 "phone" => "required|numeric|digits:10",
                 "city" => "required",
