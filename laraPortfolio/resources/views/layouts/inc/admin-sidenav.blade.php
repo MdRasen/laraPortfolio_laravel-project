@@ -9,102 +9,56 @@
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Interface</div>
-                <a class="nav-link"
+                <a class="nav-link {{ Request::is('admin/logo-fav') ? 'active' : '' }}"
                     href="{{ route('admin.logo-fav') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-gear"></i></div>
                     Logo & Favicon
                 </a>
 
-                <a class="nav-link"
+                <a class="nav-link {{ Request::is('admin/about/view-about') ? 'active' : '' }}"
                     href="{{route('admin.view-about')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
-                    About
+                    About Me
                 </a>
 
-                <a class="nav-link"
+                <a class="nav-link {{ Request::is('admin/skills/view-skills') ? 'active' : '' }}"
                     href="{{route('admin.view-skills')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-medal"></i></div>
                     Skills
                 </a>
 
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
-                    aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link"
+                    href="#">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                    My Education
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    Education
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Add New Education</a>
-                        <a class="nav-link" href="#">Education List</a>
-                    </nav>
-                </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
-                    aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link"
+                    href="#">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-rocket"></i></div>
-                    My Experience
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    Experience
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Add New Experience</a>
-                        <a class="nav-link" href="#">Experience List</a>
-                    </nav>
-                </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                    data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link"
+                    href="#">
                     <div class="sb-nav-link-icon"><i class="fa fa-list"></i></div>
                     Services
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Add New Service</a>
-                        <a class="nav-link" href="#">Service List</a>
-                    </nav>
-                </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                    data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+
+
+                <a class="nav-link"
+                    href="#">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-briefcase"></i></div>
                     Portfolio
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Add New Portfolio</a>
-                        <a class="nav-link" href="#">Portfolio List</a>
-                    </nav>
-                </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                    data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link"
+                    href="#">
                     <div class="sb-nav-link-icon"><i class="fa-brands fa-readme"></i></div>
                     Blogs
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Add New Blogs</a>
-                        <a class="nav-link" href="#">Blogs List</a>
-                    </nav>
-                </div>
-
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                    data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link"
+                    href="#">
                     <div class="sb-nav-link-icon"><i class="fa fa-comments"></i></div>
                     Contact
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Contact Message List</a>
-                    </nav>
-                </div>
             </div>
         </div>
         <div class="sb-sidenav-footer">
