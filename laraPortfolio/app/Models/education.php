@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class menu extends Model
+class education extends Model
 {
     use HasFactory;
-    protected $table = 'menus';
+    protected $table = 'educations';
 }

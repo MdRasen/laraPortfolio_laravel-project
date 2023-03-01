@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\skillsController;
 use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\admin\dashboardController;
+use App\Http\Controllers\admin\educationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkills'])->name('admin.edit-skills');
     Route::post('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkillsSubmit'])->name('admin.edit-skills');
     Route::get('/skills/delete-skills/{skill_id}', [skillsController::class, 'deleteSkills'])->name('admin.delete-skills');
+
+    // Education
+    Route::get('/education/create-edu', [educationController::class, 'createEdu'])->name('admin.create-edu');
+    Route::post('/education/create-edu', [educationController::class, 'createEduSubmit'])->name('admin.create-edu');
+    Route::get('/education/edit-edu/{edu_id}', [educationController::class, 'editEdu'])->name('admin.edit-edu');
+    Route::post('/education/edit-edu/{edu_id}', [educationController::class, 'editEduSubmit'])->name('admin.edit-edu');
 });
 
 //Public Routes

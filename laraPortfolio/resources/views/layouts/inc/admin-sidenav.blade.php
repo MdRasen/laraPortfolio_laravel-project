@@ -16,46 +16,39 @@
                 </a>
 
                 <a class="nav-link {{ Request::is('admin/about/view-about') ? 'active' : '' }}"
-                    href="{{route('admin.view-about')}}">
+                    href="{{ route('admin.view-about') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
                     About Me
                 </a>
 
                 <a class="nav-link {{ Request::is('admin/skills/view-skills') ? 'active' : '' }}"
-                    href="{{route('admin.view-skills')}}">
+                    href="{{ route('admin.view-skills') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-medal"></i></div>
                     Skills
                 </a>
 
-                <a class="nav-link"
-                    href="#">
+                <a class="nav-link {{ Request::is('admin/education/create-edu') ? 'active' : '' }}" href="{{route('admin.create-edu')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate"></i></div>
                     Education
                 </a>
-                <a class="nav-link"
-                    href="#">
+                <a class="nav-link" href="#">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-rocket"></i></div>
                     Experience
                 </a>
-                <a class="nav-link"
-                    href="#">
+                <a class="nav-link" href="#">
                     <div class="sb-nav-link-icon"><i class="fa fa-list"></i></div>
                     Services
                 </a>
 
-
-                <a class="nav-link"
-                    href="#">
+                <a class="nav-link" href="#">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-briefcase"></i></div>
                     Portfolio
                 </a>
-                <a class="nav-link"
-                    href="#">
+                <a class="nav-link" href="#">
                     <div class="sb-nav-link-icon"><i class="fa-brands fa-readme"></i></div>
                     Blogs
                 </a>
-                <a class="nav-link"
-                    href="#">
+                <a class="nav-link" href="#">
                     <div class="sb-nav-link-icon"><i class="fa fa-comments"></i></div>
                     Contact
                 </a>

@@ -1,10 +1,10 @@
 @extends('layouts.admin')
-@section('title', 'laraPortfolio - Skills')
+@section('title', 'laraPortfolio - Eductaion')
 @section('content')
     <div class="container-fluid px-3">
         <div class="card mt-4">
             <div class="card-header">
-                <h4>Create Skills <a href="{{ route('public.index') }}" target="_blank"
+                <h4>Create Education <a href="{{ route('public.index') }}" target="_blank"
                         class="btn btn-primary float-end">Live View</a></h4>
             </div>
             <div class="card-body">
@@ -16,28 +16,53 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.create-skills') }}" method="POST">
+                        <form action="{{ route('admin.create-edu') }}" method="POST">
                             @csrf
                             <div class="row form-group">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Skill Name</label>
-                                        <input type="text" class="form-control" name="skill_name"
-                                            value="{{ old('skill_name') }}" placeholder="Coding">
+                                        <label>Examination Name</label>
+                                        <input type="text" class="form-control" name="exam_name"
+                                            value="{{ old('exam_name') }}" placeholder="BSc CSE">
                                         <p style="color:red;">
-                                            @error('skill_name')
+                                            @error('exam_name')
                                                 *{{ $message }}
                                             @enderror
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Progress (1-100%)</label>
-                                        <input type="number" class="form-control" name="progress"
-                                            value="{{ old('progress') }}" placeholder="90%" min="1" max="100">
+                                        <label>Start Date</label>
+                                        <input type="month" class="form-control" name="start_date"
+                                            value="{{ old('start_date') }}">
                                         <p style="color:red;">
-                                            @error('progress')
+                                            @error('start_date')
+                                                *{{ $message }}
+                                            @enderror
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <input type="month" class="form-control" name="end_date"
+                                            value="{{ old('end_date') }}">
+                                        <p style="color:red;">
+                                            @error('end_date')
+                                                *{{ $message }}
+                                            @enderror
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Short Description</label>
+                                        <textarea class="form-control" name="short_desc" rows="2" placeholder="Short description"></textarea>
+                                        <p style="color:red;">
+                                            @error('short_desc')
                                                 *{{ $message }}
                                             @enderror
                                         </p>
@@ -70,7 +95,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary mr-2">Create Skill</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Create Education</button>
                                     <a href="#" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
@@ -85,24 +110,26 @@
                                 <table id="myTable" class="table table-bordered text-center">
                                     <thead>
                                         <tr>
-                                            <th>Skill Name</th>
-                                            <th>Progress</th>
+                                            <th>Examination Name</th>
+                                            <th>Date</th>
+                                            <th style="width: 40%;">Description</th>
                                             <th>Sort</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($skills as $item)
+                                        @foreach ($educations as $item)
                                             <tr>
-                                                <td>{{ $item->skill_name }}</td>
-                                                <td>{{ $item->progress }}</td>
+                                                <td>{{ $item->exam_name }}</td>
+                                                <td>{{ $item->start_date}} - {{ $item->end_date }}</td>
+                                                <td style="width: 40%;" >{{ $item->short_desc }}</td>
                                                 <td>{{ $item->sort }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.edit-skills', ['skill_id' => $item->id]) }}"
+                                                    <a href="{{ route('admin.edit-edu', ['edu_id' => $item->id]) }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="{{ route('admin.delete-skills', ['skill_id' => $item->id]) }}"
+                                                    <a href="#"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>

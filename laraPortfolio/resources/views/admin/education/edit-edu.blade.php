@@ -1,11 +1,11 @@
 @extends('layouts.admin')
-@section('title', 'laraPortfolio - Skills')
+@section('title', 'laraPortfolio - Edit Eductaion')
 @section('content')
     <div class="container-fluid px-3">
         <div class="card mt-4">
             <div class="card-header">
-                <h4>Create Skills <a href="{{ route('public.index') }}" target="_blank"
-                        class="btn btn-primary float-end">Live View</a></h4>
+                <h4>Edit Education <a href="{{ route('admin.create-edu') }}" class="btn btn-primary float-end">Create New
+                        Education</a></h4>
             </div>
             <div class="card-body">
                 @if (session('msg'))
@@ -16,28 +16,54 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.create-skills') }}" method="POST">
+                        <form action="#" method="POST">
                             @csrf
+                            <input type="text" name="edu_id" value="{{ $education->id }}" hidden>
                             <div class="row form-group">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Skill Name</label>
-                                        <input type="text" class="form-control" name="skill_name"
-                                            value="{{ old('skill_name') }}" placeholder="Coding">
+                                        <label>Examination Name</label>
+                                        <input type="text" class="form-control" name="exam_name"
+                                            value="{{ $education->exam_name }}" placeholder="BSc CSE">
                                         <p style="color:red;">
-                                            @error('skill_name')
+                                            @error('exam_name')
                                                 *{{ $message }}
                                             @enderror
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Progress (1-100%)</label>
-                                        <input type="number" class="form-control" name="progress"
-                                            value="{{ old('progress') }}" placeholder="90%" min="1" max="100">
+                                        <label>Start Date</label>
+                                        <input type="month" class="form-control" name="start_date"
+                                            value="{{ $education->start_date }}">
                                         <p style="color:red;">
-                                            @error('progress')
+                                            @error('start_date')
+                                                *{{ $message }}
+                                            @enderror
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <input type="month" class="form-control" name="end_date"
+                                            value="{{ $education->end_date }}">
+                                        <p style="color:red;">
+                                            @error('end_date')
+                                                *{{ $message }}
+                                            @enderror
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Short Description</label>
+                                        <textarea class="form-control" name="short_desc" rows="2" placeholder="Short description">{{ $education->short_desc }}</textarea>
+                                        <p style="color:red;">
+                                            @error('short_desc')
                                                 *{{ $message }}
                                             @enderror
                                         </p>
@@ -49,7 +75,7 @@
                                     <div class="form-group">
                                         <label>Sort</label>
                                         <input type="number" class="form-control" name="sort"
-                                            value="{{ old('sort') }}" placeholder="Sort by number">
+                                            value="{{ $education->sort }}" placeholder="Sort by number">
                                         <p style="color:red;">
                                             @error('sort')
                                                 *{{ $message }}
@@ -61,16 +87,18 @@
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="Active" selected>Active
+                                            <option value="Active" {{ $education->status == 'Active' ? 'selected' : '' }}>
+                                                Active
                                             </option>
-                                            <option value="Hidden">Hidden</option>
+                                            <option value="Hidden"{{ $education->status == 'Hidden' ? 'selected' : '' }}>
+                                                Hidden</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary mr-2">Create Skill</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Update Education</button>
                                     <a href="#" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
@@ -85,25 +113,26 @@
                                 <table id="myTable" class="table table-bordered text-center">
                                     <thead>
                                         <tr>
-                                            <th>Skill Name</th>
-                                            <th>Progress</th>
+                                            <th>Examination Name</th>
+                                            <th>Date</th>
+                                            <th style="width: 40%;">Description</th>
                                             <th>Sort</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($skills as $item)
+                                        @foreach ($educations as $item)
                                             <tr>
-                                                <td>{{ $item->skill_name }}</td>
-                                                <td>{{ $item->progress }}</td>
+                                                <td>{{ $item->exam_name }}</td>
+                                                <td>{{ $item->start_date }} - {{ $item->end_date }}</td>
+                                                <td style="width: 40%;">{{ $item->short_desc }}</td>
                                                 <td>{{ $item->sort }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.edit-skills', ['skill_id' => $item->id]) }}"
+                                                    <a href="{{ route('admin.edit-edu', ['edu_id' => $item->id]) }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="{{ route('admin.delete-skills', ['skill_id' => $item->id]) }}"
-                                                        class="btn btn-danger">Delete</a>
+                                                    <a href="#" class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach
