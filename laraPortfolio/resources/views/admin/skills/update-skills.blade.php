@@ -4,7 +4,8 @@
     <div class="container-fluid px-3">
         <div class="card mt-4">
             <div class="card-header">
-                <h4>Edit Skills <a href="{{ route('admin.view-skills') }}" class="btn btn-primary float-end">Create New Skills</a></h4>
+                <h4>Edit Skills <a href="{{ route('admin.view-skills') }}" class="btn btn-primary float-end">Create New
+                        Skills</a></h4>
             </div>
             <div class="card-body">
                 @if (session('msg'))

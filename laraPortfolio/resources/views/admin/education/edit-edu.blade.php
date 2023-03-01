@@ -132,7 +132,7 @@
                                                 <td>
                                                     <a href="{{ route('admin.edit-edu', ['edu_id' => $item->id]) }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-danger">Delete</a>
+                                                    <a href="{{ route('admin.delete-edu', ['edu_id' => $item->id]) }}" class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

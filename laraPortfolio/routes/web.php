@@ -52,6 +52,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/education/create-edu', [educationController::class, 'createEduSubmit'])->name('admin.create-edu');
     Route::get('/education/edit-edu/{edu_id}', [educationController::class, 'editEdu'])->name('admin.edit-edu');
     Route::post('/education/edit-edu/{edu_id}', [educationController::class, 'editEduSubmit'])->name('admin.edit-edu');
+    Route::get('/education/delete-edu/{edu_id}', [educationController::class, 'deleteEdu'])->name('admin.delete-edu');
 });
 
 //Public Routes

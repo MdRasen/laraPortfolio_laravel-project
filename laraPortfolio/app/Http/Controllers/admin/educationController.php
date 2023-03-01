@@ -16,7 +16,8 @@ class educationController extends Controller
         return view('admin.education.create-edu', compact('educations'));
     }
 
-    public function createEduSubmit(Request $req){
+    public function createEduSubmit(Request $req)
+    {
         $this->validate(
             $req,
             [
@@ -43,13 +44,15 @@ class educationController extends Controller
         return Redirect::back()->with('msg', 'Eduation has been created successfully!');
     }
 
-    public function editEdu($edu_id){
+    public function editEdu($edu_id)
+    {
         $educations = education::where('created_by', '=', Auth::user()->id)->get();
         $education = education::where('id', '=', $edu_id)->first();
         return view('admin.education.edit-edu', compact('educations', 'education'));
     }
 
-    public function editEduSubmit(Request $req){
+    public function editEduSubmit(Request $req)
+    {
         $this->validate(
             $req,
             [
@@ -73,5 +76,12 @@ class educationController extends Controller
         $education->status = $req->status;
         $education->update();
         return Redirect::back()->with('msg', 'Eduation has been updated successfully!');
+    }
+
+    public function deleteEdu($edu_id)
+    {
+        $education = education::where('id', '=', $edu_id)->first();
+        $education->delete();
+        return Redirect::back()->with('msg', 'Education has been deleted successfully!');
     }
 }
