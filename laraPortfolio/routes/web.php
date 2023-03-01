@@ -40,9 +40,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('about/edit-about', [aboutController::class, 'editaboutSubmit'])->name('admin.edit-about');
 
     // Skills
-    Route::get('/skills/create-skills', [skillsController::class, 'createSkills'])->name('admin.create-skills');
-    Route::post('/skills/create-skills', [skillsController::class, 'createSkillsSubmit'])->name('admin.create-skills');
     Route::get('/skills/view-skills', [skillsController::class, 'viewSkills'])->name('admin.view-skills');
+    Route::post('/skills/view-skills', [skillsController::class, 'createSkillsSubmit'])->name('admin.create-skills');
     Route::get('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkills'])->name('admin.edit-skills');
     Route::post('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkillsSubmit'])->name('admin.edit-skills');
     Route::get('/skills/delete-skills/{skill_id}', [skillsController::class, 'deleteSkills'])->name('admin.delete-skills');

@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class skillsController extends Controller
 {
-    public function createSkills()
-    {
-        $skills = skill::where('created_by', '=', Auth::user()->id)->get();
-        return view('admin.skills.create-skills', compact('skills'));
-    }
-
     public function createSkillsSubmit(Request $req)
     {
         $this->validate(
