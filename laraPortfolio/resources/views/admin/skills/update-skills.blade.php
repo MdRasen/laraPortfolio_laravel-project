@@ -111,8 +111,12 @@
                                                             <td>
                                                                 <a href="{{ route('admin.edit-skills', ['skill_id' => $item->id]) }}"
                                                                     class="btn btn-primary">Edit</a>
-                                                                <a href="{{ route('admin.delete-skills', ['skill_id' => $item->id]) }}"
-                                                                    class="btn btn-danger">Delete</a>
+
+                                                                @if ($item->id == $skill->id)
+                                                                @else
+                                                                    <a href="{{ route('admin.delete-skills', ['skill_id' => $item->id]) }}"
+                                                                        class="btn btn-danger">Delete</a>
+                                                                @endif
                                                             </td>
                                                         </tr>
                                                     @endforeach

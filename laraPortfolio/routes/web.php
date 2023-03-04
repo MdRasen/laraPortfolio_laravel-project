@@ -8,6 +8,7 @@ use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\admin\dashboardController;
 use App\Http\Controllers\admin\educationController;
+use App\Http\Controllers\admin\experienceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,14 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/education/edit-edu/{edu_id}', [educationController::class, 'editEdu'])->name('admin.edit-edu');
     Route::post('/education/edit-edu/{edu_id}', [educationController::class, 'editEduSubmit'])->name('admin.edit-edu');
     Route::get('/education/delete-edu/{edu_id}', [educationController::class, 'deleteEdu'])->name('admin.delete-edu');
+
+    // Education
+    Route::get('/experience/create-exp', [experienceController::class, 'createExp'])->name('admin.create-exp');
+    Route::post('/experience/create-exp', [experienceController::class, 'createExpSubmit'])->name('admin.create-exp');
+    Route::get('/experience/edit-exp/{exp_id}', [experienceController::class, 'editExp'])->name('admin.edit-exp');
+    Route::post('/experience/edit-exp/{exp_id}', [experienceController::class, 'editExpSubmit'])->name('admin.edit-exp');
+    Route::get('/experience/delete-exp/{exp_id}', [experienceController::class, 'deleteExp'])->name('admin.delete-exp');
+
 });
 
 //Public Routes

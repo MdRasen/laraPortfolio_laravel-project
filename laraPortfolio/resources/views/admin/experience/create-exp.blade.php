@@ -1,11 +1,11 @@
 @extends('layouts.admin')
-@section('title', 'laraPortfolio - Edit Eductaion')
+@section('title', 'laraPortfolio - Experience')
 @section('content')
     <div class="container-fluid px-3">
         <div class="card mt-4">
             <div class="card-header">
-                <h4>Edit Education <a href="{{ route('admin.create-edu') }}" class="btn btn-primary float-end">Create New
-                        Education</a></h4>
+                <h4>Create Experience <a href="{{ route('public.index') }}" target="_blank"
+                        class="btn btn-primary float-end">Live View</a></h4>
             </div>
             <div class="card-body">
                 @if (session('msg'))
@@ -16,17 +16,16 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <form action="#" method="POST">
+                        <form action="{{ route('admin.create-exp') }}" method="POST">
                             @csrf
-                            <input type="text" name="edu_id" value="{{ $education->id }}" hidden>
                             <div class="row form-group">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Examination Name</label>
-                                        <input type="text" class="form-control" name="exam_name"
-                                            value="{{ $education->exam_name }}">
+                                        <label>Experience Name</label>
+                                        <input type="text" class="form-control" name="exp_name"
+                                            value="{{ old('exp_name') }}" placeholder="Web Developer">
                                         <p style="color:red;">
-                                            @error('exam_name')
+                                            @error('exp_name')
                                                 *{{ $message }}
                                             @enderror
                                         </p>
@@ -36,7 +35,7 @@
                                     <div class="form-group">
                                         <label>Start Date</label>
                                         <input type="month" class="form-control" name="start_date"
-                                            value="{{ $education->start_date }}">
+                                            value="{{ old('start_date') }}">
                                         <p style="color:red;">
                                             @error('start_date')
                                                 *{{ $message }}
@@ -48,7 +47,7 @@
                                     <div class="form-group">
                                         <label>End Date</label>
                                         <input type="month" class="form-control" name="end_date"
-                                            value="{{ $education->end_date }}">
+                                            value="{{ old('end_date') }}">
                                         <p style="color:red;">
                                             @error('end_date')
                                                 *{{ $message }}
@@ -61,7 +60,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Short Description</label>
-                                        <textarea class="form-control" name="short_desc" rows="2" placeholder="Short description">{{ $education->short_desc }}</textarea>
+                                        <textarea class="form-control" name="short_desc" rows="2" placeholder="Short description"></textarea>
                                         <p style="color:red;">
                                             @error('short_desc')
                                                 *{{ $message }}
@@ -75,7 +74,7 @@
                                     <div class="form-group">
                                         <label>Sort</label>
                                         <input type="number" class="form-control" name="sort"
-                                            value="{{ $education->sort }}" placeholder="Sort by number">
+                                            value="{{ old('sort') }}" placeholder="Sort by number">
                                         <p style="color:red;">
                                             @error('sort')
                                                 *{{ $message }}
@@ -87,18 +86,16 @@
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="Active" {{ $education->status == 'Active' ? 'selected' : '' }}>
-                                                Active
+                                            <option value="Active" selected>Active
                                             </option>
-                                            <option value="Hidden"{{ $education->status == 'Hidden' ? 'selected' : '' }}>
-                                                Hidden</option>
+                                            <option value="Hidden">Hidden</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary mr-2">Update Education</button>
+                                    <button type="submit" class="btn btn-primary mr-2">Create Experience</button>
                                     <a href="#" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
@@ -113,7 +110,7 @@
                                 <table id="myTable" class="table table-bordered text-center">
                                     <thead>
                                         <tr>
-                                            <th>Examination Name</th>
+                                            <th>Experience Name</th>
                                             <th>Date</th>
                                             <th style="width: 40%;">Description</th>
                                             <th>Sort</th>
@@ -122,23 +119,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($educations as $item)
+                                        @foreach ($experiences as $item)
                                             <tr>
-                                                <td>{{ $item->exam_name }}</td>
+                                                <td>{{ $item->experience_name }}</td>
                                                 <td>{{ $item->start_date }} - {{ $item->end_date }}</td>
                                                 <td style="width: 40%;">{{ $item->short_desc }}</td>
                                                 <td>{{ $item->sort }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.edit-edu', ['edu_id' => $item->id]) }}"
+                                                    <a href="{{ route('admin.edit-exp', ['exp_id' => $item->id]) }}"
                                                         class="btn btn-primary">Edit</a>
-
-                                                    @if ($item->id == $education->id)
-                                                    @else
-                                                        <a href="{{ route('admin.delete-edu', ['edu_id' => $item->id]) }}"
-                                                            class="btn btn-danger">Delete</a>
-                                                    @endif
-
+                                                    <a href="{{ route('admin.delete-exp', ['exp_id' => $item->id]) }}"
+                                                        class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

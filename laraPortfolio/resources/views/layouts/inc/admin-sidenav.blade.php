@@ -31,7 +31,7 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate"></i></div>
                     Education
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Request::is('admin/experience/create-exp') ? 'active' : '' }}" href="{{route('admin.create-exp')}}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-rocket"></i></div>
                     Experience
                 </a>
