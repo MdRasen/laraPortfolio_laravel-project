@@ -27,15 +27,18 @@
                     Skills
                 </a>
 
-                <a class="nav-link {{ Request::is('admin/education/create-edu') ? 'active' : '' }}" href="{{route('admin.create-edu')}}">
+                <a class="nav-link {{ Request::is('admin/education/create-edu') ? 'active' : '' }}"
+                    href="{{ route('admin.create-edu') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate"></i></div>
                     Education
                 </a>
-                <a class="nav-link {{ Request::is('admin/experience/create-exp') ? 'active' : '' }}" href="{{route('admin.create-exp')}}">
+                <a class="nav-link {{ Request::is('admin/experience/create-exp') ? 'active' : '' }}"
+                    href="{{ route('admin.create-exp') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-rocket"></i></div>
                     Experience
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Request::is('admin/services/create-service') ? 'active' : '' }}"
+                    href="{{ route('admin.create-service') }}">
                     <div class="sb-nav-link-icon"><i class="fa fa-list"></i></div>
                     Services
                 </a>

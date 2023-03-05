@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\skillsController;
+use App\Http\Controllers\admin\serviceController;
 use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\admin\dashboardController;
@@ -55,12 +56,19 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/education/edit-edu/{edu_id}', [educationController::class, 'editEduSubmit'])->name('admin.edit-edu');
     Route::get('/education/delete-edu/{edu_id}', [educationController::class, 'deleteEdu'])->name('admin.delete-edu');
 
-    // Education
+    // Experience
     Route::get('/experience/create-exp', [experienceController::class, 'createExp'])->name('admin.create-exp');
     Route::post('/experience/create-exp', [experienceController::class, 'createExpSubmit'])->name('admin.create-exp');
     Route::get('/experience/edit-exp/{exp_id}', [experienceController::class, 'editExp'])->name('admin.edit-exp');
     Route::post('/experience/edit-exp/{exp_id}', [experienceController::class, 'editExpSubmit'])->name('admin.edit-exp');
     Route::get('/experience/delete-exp/{exp_id}', [experienceController::class, 'deleteExp'])->name('admin.delete-exp');
+
+    // Service
+    Route::get('/service/create-service', [serviceController::class, 'createService'])->name('admin.create-service');
+    Route::post('/service/create-service', [serviceController::class, 'createServiceSubmit'])->name('admin.create-service');
+    Route::get('/service/edit-service/{ser_id}', [serviceController::class, 'editService'])->name('admin.edit-service');
+    Route::post('/service/edit-service/{ser_id}', [serviceController::class, 'editServiceSubmit'])->name('admin.edit-service');
+    Route::get('/service/delete-exp/{ser_id}', [serviceController::class, 'deleteService'])->name('admin.delete-service');
 
 });
 
