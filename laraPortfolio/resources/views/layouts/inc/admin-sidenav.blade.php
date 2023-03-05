@@ -15,35 +15,35 @@
                     Logo & Favicon
                 </a>
 
-                <a class="nav-link {{ Request::is('admin/about/view-about') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/about/view-about') || Request::is('admin/about/edit-about') ? 'active' : '' }}"
                     href="{{ route('admin.view-about') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
                     About Me
                 </a>
 
-                <a class="nav-link {{ Request::is('admin/skills/view-skills') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/skills/view-skills') || Request::is('admin/skills/edit-skills/*')  ? 'active' : '' }}"
                     href="{{ route('admin.view-skills') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-medal"></i></div>
                     Skills
                 </a>
 
-                <a class="nav-link {{ Request::is('admin/education/create-edu') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/education/create-edu') || Request::is('admin/education/edit-edu/*') ? 'active' : '' }}"
                     href="{{ route('admin.create-edu') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user-graduate"></i></div>
                     Education
                 </a>
-                <a class="nav-link {{ Request::is('admin/experience/create-exp') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/experience/create-exp') || Request::is('admin/experience/edit-exp/*') ? 'active' : '' }}"
                     href="{{ route('admin.create-exp') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-rocket"></i></div>
                     Experience
                 </a>
-                <a class="nav-link {{ Request::is('admin/service/create-service') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/service/create-service') || Request::is('admin/service/edit-service/*') ? 'active' : '' }}"
                     href="{{ route('admin.create-service') }}">
                     <div class="sb-nav-link-icon"><i class="fa fa-list"></i></div>
                     Services
                 </a>
 
-                <a class="nav-link {{ Request::is('admin/portfolio/create-portfolio') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/portfolio/create-portfolio') || Request::is('admin/portfolio/edit-portfolio/*') ? 'active' : '' }}"
                     href="{{ route('admin.create-portfolio') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-briefcase"></i></div>
                     Portfolio
