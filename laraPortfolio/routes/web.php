@@ -9,6 +9,7 @@ use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\settingsController;
 use App\Http\Controllers\admin\dashboardController;
 use App\Http\Controllers\admin\educationController;
+use App\Http\Controllers\admin\portfolioController;
 use App\Http\Controllers\admin\experienceController;
 
 /*
@@ -70,6 +71,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/service/edit-service/{ser_id}', [serviceController::class, 'editServiceSubmit'])->name('admin.edit-service');
     Route::get('/service/delete-exp/{ser_id}', [serviceController::class, 'deleteService'])->name('admin.delete-service');
 
+    // Portfolio
+    Route::get('/portfolio/create-portfolio', [portfolioController::class, 'createPortfolio'])->name('admin.create-portfolio');
+    Route::post('/portfolio/create-portfolio', [portfolioController::class, 'createPortfolioSubmit'])->name('admin.create-portfolio');
+    // Route::get('/service/edit-service/{ser_id}', [serviceController::class, 'editService'])->name('admin.edit-service');
+    // Route::post('/service/edit-service/{ser_id}', [serviceController::class, 'editServiceSubmit'])->name('admin.edit-service');
+    // Route::get('/service/delete-exp/{ser_id}', [serviceController::class, 'deleteService'])->name('admin.delete-service');
 });
 
 //Public Routes

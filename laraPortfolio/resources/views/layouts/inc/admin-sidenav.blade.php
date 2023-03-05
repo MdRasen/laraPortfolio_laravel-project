@@ -37,13 +37,14 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-rocket"></i></div>
                     Experience
                 </a>
-                <a class="nav-link {{ Request::is('admin/services/create-service') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/service/create-service') ? 'active' : '' }}"
                     href="{{ route('admin.create-service') }}">
                     <div class="sb-nav-link-icon"><i class="fa fa-list"></i></div>
                     Services
                 </a>
 
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Request::is('admin/portfolio/create-portfolio') ? 'active' : '' }}"
+                    href="{{ route('admin.create-portfolio') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-briefcase"></i></div>
                     Portfolio
                 </a>
