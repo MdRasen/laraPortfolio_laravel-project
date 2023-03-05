@@ -101,16 +101,16 @@
                                                         No Image
                                                     @else
                                                         <img src="{{ asset('storage/portfolio') }}/{{ $item->portfolio_image }}"
-                                                            alt="admin avatar" style="height: 100px">
+                                                            alt="admin avatar" style="height: 80px">
                                                     @endif
                                                 </td>
                                                 <td>{{ $item->portfolio_name }}</td>
                                                 <td>{{ $item->sort }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.edit-service', ['ser_id' => $item->id]) }}"
+                                                    <a href="{{ route('admin.edit-portfolio', ['port_id' => $item->id]) }}"
                                                         class="btn btn-primary">Edit</a>
-                                                    <a href="{{ route('admin.delete-service', ['ser_id' => $item->id]) }}"
+                                                    <a href="{{ route('admin.delete-portfolio', ['port_id' => $item->id]) }}"
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>

@@ -74,9 +74,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     // Portfolio
     Route::get('/portfolio/create-portfolio', [portfolioController::class, 'createPortfolio'])->name('admin.create-portfolio');
     Route::post('/portfolio/create-portfolio', [portfolioController::class, 'createPortfolioSubmit'])->name('admin.create-portfolio');
-    // Route::get('/service/edit-service/{ser_id}', [serviceController::class, 'editService'])->name('admin.edit-service');
-    // Route::post('/service/edit-service/{ser_id}', [serviceController::class, 'editServiceSubmit'])->name('admin.edit-service');
-    // Route::get('/service/delete-exp/{ser_id}', [serviceController::class, 'deleteService'])->name('admin.delete-service');
+    Route::get('/portfolio/edit-portfolio/{port_id}', [portfolioController::class, 'editPortfolio'])->name('admin.edit-portfolio');
+    Route::post('/portfolio/edit-portfolio/{port_id}', [portfolioController::class, 'editPortfolioSubmit'])->name('admin.edit-portfolio');
+    Route::get('/portfolio/delete-portfolio/{port_id}', [portfolioController::class, 'deletePortfolio'])->name('admin.delete-portfolio');
 });
 
 //Public Routes
