@@ -53,7 +53,8 @@
                     <div class="sb-nav-link-icon"><i class="fa-brands fa-readme"></i></div>
                     Blogs
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Request::is('admin/contact/view-contact') ? 'active' : '' }}"
+                    href="{{ route('admin.view-contact') }}">
                     <div class="sb-nav-link-icon"><i class="fa fa-comments"></i></div>
                     Contact
                 </a>

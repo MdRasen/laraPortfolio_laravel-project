@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\blogController;
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\skillsController;
+use App\Http\Controllers\admin\contactController;
 use App\Http\Controllers\admin\serviceController;
 use App\Http\Controllers\public\publicController;
 use App\Http\Controllers\admin\settingsController;
@@ -85,6 +86,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlog'])->name('admin.edit-blog');
     Route::post('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlogSubmit'])->name('admin.edit-blog');
     Route::get('/blog/delete-blog/{blog_id}', [blogController::class, 'deleteBlog'])->name('admin.delete-blog');
+
+    // Contact
+    Route::get('/contact/view-contact', [contactController::class, 'viewContact'])->name('admin.view-contact');
+    Route::post('/contact/view-contact', [aboutController::class, 'contactSubmit'])->name('admin.submit-contact');
+    Route::get('/contact/delete-message/{msg_id}', [contactController::class, 'deleteMessage'])->name('admin.delete-message');
 });
 
 //Public Routes

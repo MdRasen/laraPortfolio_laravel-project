@@ -6,6 +6,7 @@ use App\Models\about;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class aboutController extends Controller
 {
@@ -107,5 +108,26 @@ class aboutController extends Controller
         $about->update();
 
         return redirect('admin/about/view-about')->with('msg', 'Profile has been updated successfully!');
+    }
+
+    public function contactSubmit(Request $req)
+    {
+        $this->validate(
+            $req,
+            [
+                
+                "email" => "required|email",
+                "phone" => "required|numeric|digits:10",
+                "city" => "required",
+            ]
+        );
+        $about = about::where('created_by', '=', Auth::user()->id)->first();
+        $about->email = $req->email;
+        $about->phone = $req->phone;
+        $about->city = $req->city;
+        $about->website_link = $req->website_link;
+        $about->update();
+
+        return Redirect::back()->with('msg', 'Information has been updated successfully!');
     }
 }
