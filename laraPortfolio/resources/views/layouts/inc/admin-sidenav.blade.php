@@ -21,7 +21,7 @@
                     About Me
                 </a>
 
-                <a class="nav-link {{ Request::is('admin/skills/view-skills') || Request::is('admin/skills/edit-skills/*')  ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('admin/skills/view-skills') || Request::is('admin/skills/edit-skills/*') ? 'active' : '' }}"
                     href="{{ route('admin.view-skills') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-medal"></i></div>
                     Skills
@@ -48,7 +48,8 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-briefcase"></i></div>
                     Portfolio
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Request::is('admin/blog/create-blog') || Request::is('admin/blog/edit-blog/*') ? 'active' : '' }}"
+                    href="{{ route('admin.create-blog') }}">
                     <div class="sb-nav-link-icon"><i class="fa-brands fa-readme"></i></div>
                     Blogs
                 </a>

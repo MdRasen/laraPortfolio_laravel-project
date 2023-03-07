@@ -11,6 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="{{ '/admin-assets/css/styles.css' }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Summernote CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 </head>
 
 <body class="sb-nav-fixed">
@@ -32,6 +36,18 @@
     <script src="{{ '/admin-assets/assets/demo/chart-bar-demo.js' }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="{{ '/admin-assets/js/datatables-simple-demo.js' }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- Summernote-lite Start --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#summernote").summernote({
+                height: 200
+            });
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+    {{-- Summernote-lite End --}}
 </body>
 
 </html>

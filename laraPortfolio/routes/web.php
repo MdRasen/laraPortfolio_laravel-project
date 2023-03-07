@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\blogController;
 use App\Http\Controllers\admin\aboutController;
 use App\Http\Controllers\admin\skillsController;
 use App\Http\Controllers\admin\serviceController;
@@ -77,6 +78,13 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/portfolio/edit-portfolio/{port_id}', [portfolioController::class, 'editPortfolio'])->name('admin.edit-portfolio');
     Route::post('/portfolio/edit-portfolio/{port_id}', [portfolioController::class, 'editPortfolioSubmit'])->name('admin.edit-portfolio');
     Route::get('/portfolio/delete-portfolio/{port_id}', [portfolioController::class, 'deletePortfolio'])->name('admin.delete-portfolio');
+
+    // Blog
+    Route::get('/blog/create-blog', [blogController::class, 'createBlog'])->name('admin.create-blog');
+    Route::post('/blog/create-blog', [blogController::class, 'createBlogSubmit'])->name('admin.create-blog');
+    Route::get('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlog'])->name('admin.edit-blog');
+    Route::post('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlogSubmit'])->name('admin.edit-blog');
+    Route::get('/blog/delete-blog/{blog_id}', [blogController::class, 'deleteBlog'])->name('admin.delete-blog');
 });
 
 //Public Routes
