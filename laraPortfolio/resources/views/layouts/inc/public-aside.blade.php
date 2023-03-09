@@ -1,7 +1,9 @@
 <!-- Aside Start -->
 <div class="aside">
     <div class="logo">
-        <a href="index.html"><span>A</span>tlas</a>
+        <a href="{{ route('public.index') }}">
+            <span>{{ $about ? $about->nickname[0] : 'A' }}</span>{{ $about ? ltrim($about->nickname, $about->nickname[0]) : 'amin' }}
+        </a>
     </div>
     <div class="nav-toggler">
         <span></span>

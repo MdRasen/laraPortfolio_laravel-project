@@ -17,7 +17,6 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="card">
-
                             <div class="card-body">
                                 <div class="card-body text-center">
                                     @if ($about->image == null)
@@ -75,8 +74,7 @@
                                         <p class="text-muted mb-0">
                                             {{ $about->short_description != null
                                                 ? $about->short_description
-                                                : '                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam enim, itaque culpa expedita reiciendis voluptates.
-                                                                                                                                    ' }}
+                                                : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam enim, itaque culpa expedita reiciendis voluptates.' }}
                                         </p>
                                     </div>
                                     <div class="col-md-6">
@@ -152,7 +150,8 @@
                                 </div>
                                 <div class="row pt-4">
                                     <div class="justify-content-center">
-                                        <a href="{{route('admin.edit-about')}}" class="btn btn-primary mr-1">Edit Profile</a>
+                                        <a href="{{ route('admin.edit-about') }}" class="btn btn-primary mr-1">Edit
+                                            Profile</a>
                                         <button type="button" class="btn btn-outline-primary">Change Password</button>
                                     </div>
                                 </div>

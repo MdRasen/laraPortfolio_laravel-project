@@ -85,7 +85,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/blog/create-blog', [blogController::class, 'createBlogSubmit'])->name('admin.create-blog');
     Route::get('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlog'])->name('admin.edit-blog');
     Route::post('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlogSubmit'])->name('admin.edit-blog');
-    Route::get('/blog/delete-blog/{blog_id}', [blogController::class, 'deleteBlog'])->name('admin.delete-blog');
+    Route::get('/blog/delete-blog/{blog_id}', [blogController::class, 'deleteBlog'])->name('admin.
+    delete-blog');
 
     // Contact
     Route::get('/contact/view-contact', [contactController::class, 'viewContact'])->name('admin.view-contact');
