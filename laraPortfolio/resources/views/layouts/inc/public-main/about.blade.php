@@ -115,54 +115,74 @@
                         <div class="row">
                             <div class="timeline-box padd-15">
                                 <div class="timeline shadow-dark">
-                                    <!-- Timeline item -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2013 - 2015
-                                        </h3>
-                                        <h4 class="timeline-title">
-                                            Master in Computer Science
-                                        </h4>
-                                        <p class="timeline-text">
-                                            Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Culpa eius sit praesentium
-                                            labore perspiciatis deleniti et nobis alias quas
-                                            nulla.
-                                        </p>
-                                    </div>
-                                    <!-- Timeline item -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2013 - 2015
-                                        </h3>
-                                        <h4 class="timeline-title">
-                                            Master in Computer Science
-                                        </h4>
-                                        <p class="timeline-text">
-                                            Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Culpa eius sit praesentium
-                                            labore perspiciatis deleniti et nobis alias quas
-                                            nulla.
-                                        </p>
-                                    </div>
-                                    <!-- Timeline item -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2013 - 2015
-                                        </h3>
-                                        <h4 class="timeline-title">
-                                            Master in Computer Science
-                                        </h4>
-                                        <p class="timeline-text">
-                                            Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Culpa eius sit praesentium
-                                            labore perspiciatis deleniti et nobis alias quas
-                                            nulla.
-                                        </p>
-                                    </div>
+                                    @if (count($educations) != 0)
+                                        @foreach ($educations as $item)
+                                            <!-- Timeline item -->
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i>
+                                                    {{ substr($item->start_date, 0, 4) }} -
+                                                    {{ substr($item->end_date, 0, 4) }}
+                                                </h3>
+                                                <h4 class="timeline-title">
+                                                    {{ $item->exam_name }}
+                                                </h4>
+                                                <p class="timeline-text">
+                                                    {{ $item->short_desc }}
+                                                </p>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <!-- Timeline item -->
+                                        <div class="timeline-item">
+                                            <div class="circle-dot"></div>
+                                            <h3 class="timeline-date">
+                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                            </h3>
+                                            <h4 class="timeline-title">
+                                                Master in Computer Science
+                                            </h4>
+                                            <p class="timeline-text">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Culpa eius sit praesentium
+                                                labore perspiciatis deleniti et nobis alias quas
+                                                nulla.
+                                            </p>
+                                        </div>
+                                        <!-- Timeline item -->
+                                        <div class="timeline-item">
+                                            <div class="circle-dot"></div>
+                                            <h3 class="timeline-date">
+                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                            </h3>
+                                            <h4 class="timeline-title">
+                                                Master in Computer Science
+                                            </h4>
+                                            <p class="timeline-text">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Culpa eius sit praesentium
+                                                labore perspiciatis deleniti et nobis alias quas
+                                                nulla.
+                                            </p>
+                                        </div>
+                                        <!-- Timeline item -->
+                                        <div class="timeline-item">
+                                            <div class="circle-dot"></div>
+                                            <h3 class="timeline-date">
+                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                            </h3>
+                                            <h4 class="timeline-title">
+                                                Master in Computer Science
+                                            </h4>
+                                            <p class="timeline-text">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Culpa eius sit praesentium
+                                                labore perspiciatis deleniti et nobis alias quas
+                                                nulla.
+                                            </p>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -172,54 +192,75 @@
                         <div class="row">
                             <div class="timeline-box padd-15">
                                 <div class="timeline shadow-dark">
-                                    <!-- Timeline item -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2013 - 2015
-                                        </h3>
-                                        <h4 class="timeline-title">
-                                            Master in Computer Science
-                                        </h4>
-                                        <p class="timeline-text">
-                                            Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Culpa eius sit praesentium
-                                            labore perspiciatis deleniti et nobis alias quas
-                                            nulla.
-                                        </p>
-                                    </div>
-                                    <!-- Timeline item -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2013 - 2015
-                                        </h3>
-                                        <h4 class="timeline-title">
-                                            Master in Computer Science
-                                        </h4>
-                                        <p class="timeline-text">
-                                            Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Culpa eius sit praesentium
-                                            labore perspiciatis deleniti et nobis alias quas
-                                            nulla.
-                                        </p>
-                                    </div>
-                                    <!-- Timeline item -->
-                                    <div class="timeline-item">
-                                        <div class="circle-dot"></div>
-                                        <h3 class="timeline-date">
-                                            <i class="fa fa-calendar"></i> 2013 - 2015
-                                        </h3>
-                                        <h4 class="timeline-title">
-                                            Master in Computer Science
-                                        </h4>
-                                        <p class="timeline-text">
-                                            Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Culpa eius sit praesentium
-                                            labore perspiciatis deleniti et nobis alias quas
-                                            nulla.
-                                        </p>
-                                    </div>
+                                    @if (count($experiences) != 0)
+                                        @foreach ($experiences as $item)
+                                            <!-- Timeline item -->
+                                            <div class="timeline-item">
+                                                <div class="circle-dot"></div>
+                                                <h3 class="timeline-date">
+                                                    <i class="fa fa-calendar"></i>
+                                                    {{ substr($item->start_date, 0, 4) }} -
+                                                    {{ substr($item->end_date, 0, 4) }}
+                                                </h3>
+                                                <h4 class="timeline-title">
+                                                    {{ $item->experience_name }}
+                                                </h4>
+                                                <p class="timeline-text">
+                                                    {{ $item->short_desc }}
+                                                </p>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <!-- Timeline item -->
+                                        <div class="timeline-item">
+                                            <div class="circle-dot"></div>
+                                            <h3 class="timeline-date">
+                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                            </h3>
+                                            <h4 class="timeline-title">
+                                                Master in Computer Science
+                                            </h4>
+                                            <p class="timeline-text">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Culpa eius sit praesentium
+                                                labore perspiciatis deleniti et nobis alias quas
+                                                nulla.
+                                            </p>
+                                        </div>
+                                        <!-- Timeline item -->
+                                        <div class="timeline-item">
+                                            <div class="circle-dot"></div>
+                                            <h3 class="timeline-date">
+                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                            </h3>
+                                            <h4 class="timeline-title">
+                                                Master in Computer Science
+                                            </h4>
+                                            <p class="timeline-text">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Culpa eius sit praesentium
+                                                labore perspiciatis deleniti et nobis alias quas
+                                                nulla.
+                                            </p>
+                                        </div>
+                                        <!-- Timeline item -->
+                                        <div class="timeline-item">
+                                            <div class="circle-dot"></div>
+                                            <h3 class="timeline-date">
+                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                            </h3>
+                                            <h4 class="timeline-title">
+                                                Master in Computer Science
+                                            </h4>
+                                            <p class="timeline-text">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Culpa eius sit praesentium
+                                                labore perspiciatis deleniti et nobis alias quas
+                                                nulla.
+                                            </p>
+                                        </div>
+                                    @endif
+
                                 </div>
                             </div>
                         </div>

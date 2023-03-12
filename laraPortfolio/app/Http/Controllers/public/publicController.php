@@ -6,6 +6,8 @@ use App\Models\about;
 use App\Models\skill;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\education;
+use App\Models\experience;
 
 class publicController extends Controller
 {
@@ -13,11 +15,9 @@ class publicController extends Controller
     {
         $about = about::first();
         $skills = skill::where('status', '=', 'Active')->orderBy('sort')->get()->take(4);
-        return view("public.index", compact('about', 'skills'));
-    }
-
-    public function about()
-    {
-        echo "ok";
+        $educations = education::where('status', '=', 'Active')->orderBy('sort')->get()->take(3);
+        $experiences = experience::where('status', '=', 'Active')->orderBy('sort')->get()->take(3);
+        // echo $educations;
+        return view("public.index", compact('about', 'skills', 'educations', 'experiences'));
     }
 }

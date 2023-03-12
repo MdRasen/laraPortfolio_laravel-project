@@ -12,7 +12,7 @@ class experienceController extends Controller
 {
     public function createExp()
     {
-        $experiences = experience::where('created_by', '=', Auth::user()->id)->get();
+        $experiences = experience::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         return view('admin.experience.create-exp', compact('experiences'));
     }
 
@@ -46,7 +46,7 @@ class experienceController extends Controller
 
     public function editExp($exp_id)
     {
-        $experiences = experience::where('created_by', '=', Auth::user()->id)->get();
+        $experiences = experience::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         $experience = experience::where('id', '=', $exp_id)->first();
         return view('admin.experience.edit-exp', compact('experiences', 'experience'));
     }

@@ -12,7 +12,7 @@ class educationController extends Controller
 {
     public function createEdu()
     {
-        $educations = education::where('created_by', '=', Auth::user()->id)->get();
+        $educations = education::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         return view('admin.education.create-edu', compact('educations'));
     }
 
@@ -46,7 +46,7 @@ class educationController extends Controller
 
     public function editEdu($edu_id)
     {
-        $educations = education::where('created_by', '=', Auth::user()->id)->get();
+        $educations = education::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         $education = education::where('id', '=', $edu_id)->first();
         return view('admin.education.edit-edu', compact('educations', 'education'));
     }
