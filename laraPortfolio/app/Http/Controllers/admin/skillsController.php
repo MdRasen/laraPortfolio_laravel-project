@@ -36,14 +36,14 @@ class skillsController extends Controller
 
     public function viewSkills()
     {
-        $skills = skill::where('created_by', '=', Auth::user()->id)->get();
+        $skills = skill::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         return view('admin.skills.view-skills', compact('skills'));
     }
 
     public function editSkills($skill_id)
     {
         $skill = skill::where('id', '=', $skill_id)->first();
-        $skills = skill::where('created_by', '=', Auth::user()->id)->get();
+        $skills = skill::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         return view('admin.skills.update-skills', compact('skill', 'skills'));
     }
 

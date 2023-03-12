@@ -115,7 +115,6 @@ class aboutController extends Controller
         $this->validate(
             $req,
             [
-                
                 "email" => "required|email",
                 "phone" => "required|numeric|digits:10",
                 "city" => "required",

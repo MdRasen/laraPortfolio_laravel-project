@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('designation')->nullable();
             $table->string('image')->nullable();
             $table->mediumText('short_description')->nullable();
-            $table->string('birthday')->nullable();
-            $table->string('age')->nullable();
+            $table->date('birthday')->nullable();
+            $table->integer('age')->nullable();
             $table->string('gender')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
