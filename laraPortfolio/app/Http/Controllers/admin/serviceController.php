@@ -13,7 +13,7 @@ class serviceController extends Controller
 {
     public function createService()
     {
-        $services = service::where('created_by', '=', Auth::user()->id)->get();
+        $services = service::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         return view('admin.services.create-service', compact('services'));
     }
 
@@ -45,7 +45,7 @@ class serviceController extends Controller
 
     public function editService($ser_id)
     {
-        $services = service::where('created_by', '=', Auth::user()->id)->get();
+        $services = service::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         $service = service::where('id', '=', $ser_id)->first();
         return view('admin.services.edit-service', compact('services', 'service'));
     }

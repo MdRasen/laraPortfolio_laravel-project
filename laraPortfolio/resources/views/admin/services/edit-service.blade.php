@@ -102,8 +102,8 @@
                                     <thead>
                                         <tr>
                                             <th>Service Name</th>
-                                            <th>Icon Class</th>
-                                            <th style="width: 40%;">Description</th>
+                                            <th style="width: 20%;">Icon Class</th>
+                                            <th style="width: 35%;">Description</th>
                                             <th>Sort</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -113,8 +113,8 @@
                                         @foreach ($services as $item)
                                             <tr>
                                                 <td>{{ $item->service_name }}</td>
-                                                <td>{{ $item->icon_class }}</td>
-                                                <td style="width: 40%;">{{ $item->short_desc }}</td>
+                                                <td style="width: 20%;">{{ $item->icon_class }}</td>
+                                                <td style="width: 35%;">{{ $item->short_desc }}</td>
                                                 <td>{{ $item->sort }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>
