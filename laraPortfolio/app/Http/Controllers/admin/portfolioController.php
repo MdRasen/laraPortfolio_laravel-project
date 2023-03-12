@@ -12,7 +12,7 @@ class portfolioController extends Controller
 {
     public function createPortfolio()
     {
-        $portfolios = portfolio::where('created_by', '=', Auth::user()->id)->get();
+        $portfolios = portfolio::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         return view('admin.portfolio.create-portfolio', compact('portfolios'));
     }
 
@@ -49,7 +49,7 @@ class portfolioController extends Controller
 
     public function editPortfolio($port_id)
     {
-        $portfolios = portfolio::where('created_by', '=', Auth::user()->id)->get();
+        $portfolios = portfolio::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         $portfolio = portfolio::where('id', '=', $port_id)->first();
         return view('admin.portfolio.edit-portfolio', compact('portfolios', 'portfolio'));
     }

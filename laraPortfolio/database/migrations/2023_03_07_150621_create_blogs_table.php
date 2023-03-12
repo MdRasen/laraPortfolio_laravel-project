@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('blog_name');
             $table->string('name_slug');
             $table->string('blog_image');
-            $table->string('blog_body');
+            $table->mediumText('blog_body');
             $table->integer('sort');
             $table->string('status');
             $table->Integer('created_by');
