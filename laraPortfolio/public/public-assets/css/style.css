@@ -391,6 +391,28 @@ h3.my-profession {
     border-radius: 5px;
 }
 
+.alert {
+    padding: 12px;
+    background-color: var(--skin-color);
+    color: white;
+    border-radius: 10px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
 /* Home End */
 
 /* About Start */
@@ -914,6 +936,10 @@ h3.my-profession {
 
     .home .home-img {
         display: none;
+    }
+
+    .home .alert-box {
+        margin-top: 30px;
     }
 }
 

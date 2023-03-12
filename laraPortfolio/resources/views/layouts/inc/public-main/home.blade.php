@@ -30,6 +30,28 @@
                 @endif
             </div>
         </div>
+
+        {{-- Alert Box --}}
+        <div class="row padd-15">
+            {{-- Success Message --}}
+            @if (session('msg'))
+                <div class="alert-box">
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Holy guacamole!</strong> {{ session('msg') }}
+                    </div>
+                </div>
+            @endif
+            {{-- Error Message --}}
+            @if ($errors->any())
+                <div class="alert-box">
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <strong>Holy guacamole!</strong> Message failed to send.
+                    </div>
+                </div>
+            @endif
+        </div>
     </div>
 </section>
 <!-- Home Section End -->

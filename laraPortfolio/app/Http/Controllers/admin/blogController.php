@@ -13,7 +13,7 @@ class blogController extends Controller
 {
     public function createBlog()
     {
-        $blogs = blog::where('created_by', '=', Auth::user()->id)->get();
+        $blogs = blog::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         return view('admin.blog.create-blog', compact('blogs'));
     }
 
@@ -55,7 +55,7 @@ class blogController extends Controller
 
     public function editBlog($blog_id)
     {
-        $blogs = blog::where('created_by', '=', Auth::user()->id)->get();
+        $blogs = blog::where('created_by', '=', Auth::user()->id)->orderBy('sort')->get();
         $blog = blog::where('id', '=', $blog_id)->first();
         return view('admin.blog.edit-blog', compact('blogs', 'blog'));
     }

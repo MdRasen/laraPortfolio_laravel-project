@@ -13,25 +13,25 @@
             <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-phone"></i></div>
                 <h4>Call Us On</h4>
-                <p>+880 1234567890</p>
+                <p>+880 {{ $about ? $about->phone : '+880 1234567890' }}</p>
             </div>
             <!-- Contact info item-->
             <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
                 <h4>Office</h4>
-                <p>Dhaka</p>
+                <p>{{ $about ? $about->city : 'Dhaka, Bangladesh' }}</p>
             </div>
             <!-- Contact info item-->
             <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-envelope"></i></div>
                 <h4>Email</h4>
-                <p>info@gmail.com</p>
+                <p>{{ $about ? $about->email : 'my-mail@gmail.com' }}</p>
             </div>
             <!-- Contact info item-->
             <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-globe-europe"></i></div>
                 <h4>Website</h4>
-                <p>www.domain.com</p>
+                <p>{{ $about ? $about->website_link : 'www.mydomain.com' }}</p>
             </div>
         </div>
         <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
@@ -41,39 +41,65 @@
         <!-- Contact form -->
         <div class="row">
             <div class="contact-form padd-15">
-                <div class="row">
-                    <div class="form-item col-6 padd-15">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name" />
+                <form action="{{ route('public.index') }}" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="form-item col-6 padd-15">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                    placeholder="Name" />
+                                <p class="padd-15" style="color: var(--skin-color); text-align:end">
+                                    @error('name')
+                                        *{{ $message }}
+                                    @enderror
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-item col-6 padd-15">
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}"
+                                    placeholder="Email" />
+                                <p class="padd-15" style="color:var(--skin-color); text-align:end">
+                                    @error('email')
+                                        *{{ $message }}
+                                    @enderror
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-item col-6 padd-15">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" />
+                    <div class="row">
+                        <div class="form-item col-12 padd-15">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" value="{{ old('subject') }}"
+                                    placeholder="Subject" />
+                                <p class="padd-15" style="color:var(--skin-color); text-align:end">
+                                    @error('subject')
+                                        *{{ $message }}
+                                    @enderror
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-item col-12 padd-15">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Subject" />
+                    <div class="row">
+                        <div class="form-item col-12 padd-15">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" placeholder="Message">{{ old('message') }}</textarea>
+                                <p class="padd-15" style="color:var(--skin-color); text-align:end">
+                                    @error('message')
+                                        *{{ $message }}
+                                    @enderror
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-item col-12 padd-15">
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Message"></textarea>
+                    <div class="row">
+                        <div class="form-item col-12 padd-15">
+                            <div class="form-group">
+                                <button type="submit" class="btn">Send Message</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-item col-12 padd-15">
-                        <div class="form-group">
-                            <button type="submit" class="btn">Send Message</button>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

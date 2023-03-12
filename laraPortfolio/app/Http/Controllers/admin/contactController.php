@@ -13,7 +13,7 @@ class contactController extends Controller
 {
     public function viewContact()
     {
-        $contacts = contact::get();
+        $contacts = contact::orderByDesc('id')->get();
         $about = about::where('created_by', '=', Auth::user()->id)->first();
         return view('admin.contact.view-contact', compact('contacts', 'about'));
     }

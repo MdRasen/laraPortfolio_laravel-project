@@ -122,8 +122,8 @@
                                         @foreach ($educations as $item)
                                             <tr>
                                                 <td>{{ $item->exam_name }}</td>
-                                                <td>{{ $item->start_date}} - {{ $item->end_date }}</td>
-                                                <td style="width: 40%;" >{{ $item->short_desc }}</td>
+                                                <td>{{ $item->start_date }} - {{ $item->end_date }}</td>
+                                                <td style="width: 40%;">{{ $item->short_desc }}</td>
                                                 <td>{{ $item->sort }}</td>
                                                 <td>{{ $item->status }}</td>
                                                 <td>

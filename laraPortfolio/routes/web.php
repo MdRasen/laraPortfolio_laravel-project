@@ -112,4 +112,5 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 //Public Routes
 Route::controller(publicController::class)->group(function () {
     Route::get('/', 'index')->name('public.index');
+    Route::post('/', 'submitForm')->name('public.index');
 });
