@@ -40,59 +40,76 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/logo-fav', [settingsController::class, 'fav_update'])->name('admin.fav-update');
 
     // About Settings
-    Route::get('/about/view-about', [aboutController::class, 'viewabout'])->name('admin.view-about');
-    Route::post('/about/view-about', [aboutController::class, 'updateImage'])->name('admin.about.update-image');
-    Route::get('about/edit-about', [aboutController::class, 'editabout'])->name('admin.edit-about');
-    Route::post('about/edit-about', [aboutController::class, 'editaboutSubmit'])->name('admin.edit-about');
+    Route::controller(aboutController::class)->group(function () {
+        Route::get('/about/view-about', 'viewabout')->name('admin.view-about');
+        Route::post('/about/view-about', 'updateImage')->name('admin.about.update-image');
+        Route::get('about/edit-about', 'editabout')->name('admin.edit-about');
+        Route::post('about/edit-about', 'editaboutSubmit')->name('admin.edit-about');
+    });
 
     // Skills
-    Route::get('/skills/view-skills', [skillsController::class, 'viewSkills'])->name('admin.view-skills');
-    Route::post('/skills/view-skills', [skillsController::class, 'createSkillsSubmit'])->name('admin.create-skills');
-    Route::get('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkills'])->name('admin.edit-skills');
-    Route::post('/skills/edit-skills/{skill_id}', [skillsController::class, 'editSkillsSubmit'])->name('admin.edit-skills');
-    Route::get('/skills/delete-skills/{skill_id}', [skillsController::class, 'deleteSkills'])->name('admin.delete-skills');
+    Route::controller(skillsController::class)->group(function () {
+        Route::get('/skills/view-skills', 'viewSkills')->name('admin.view-skills');
+        Route::post('/skills/view-skills', 'createSkillsSubmit')->name('admin.create-skills');
+        Route::get('/skills/edit-skills/{skill_id}', 'editSkills')->name('admin.edit-skills');
+        Route::post('/skills/edit-skills/{skill_id}', 'editSkillsSubmit')->name('admin.edit-skills');
+        Route::get('/skills/delete-skills/{skill_id}', 'deleteSkills')->name('admin.delete-skills');
+    });
 
     // Education
-    Route::get('/education/create-edu', [educationController::class, 'createEdu'])->name('admin.create-edu');
-    Route::post('/education/create-edu', [educationController::class, 'createEduSubmit'])->name('admin.create-edu');
-    Route::get('/education/edit-edu/{edu_id}', [educationController::class, 'editEdu'])->name('admin.edit-edu');
-    Route::post('/education/edit-edu/{edu_id}', [educationController::class, 'editEduSubmit'])->name('admin.edit-edu');
-    Route::get('/education/delete-edu/{edu_id}', [educationController::class, 'deleteEdu'])->name('admin.delete-edu');
+    Route::controller(educationController::class)->group(function () {
+        Route::get('/education/create-edu', 'createEdu')->name('admin.create-edu');
+        Route::post('/education/create-edu', 'createEduSubmit')->name('admin.create-edu');
+        Route::get('/education/edit-edu/{edu_id}', 'editEdu')->name('admin.edit-edu');
+        Route::post('/education/edit-edu/{edu_id}', 'editEduSubmit')->name('admin.edit-edu');
+        Route::get('/education/delete-edu/{edu_id}', 'deleteEdu')->name('admin.delete-edu');
+    });
 
     // Experience
-    Route::get('/experience/create-exp', [experienceController::class, 'createExp'])->name('admin.create-exp');
-    Route::post('/experience/create-exp', [experienceController::class, 'createExpSubmit'])->name('admin.create-exp');
-    Route::get('/experience/edit-exp/{exp_id}', [experienceController::class, 'editExp'])->name('admin.edit-exp');
-    Route::post('/experience/edit-exp/{exp_id}', [experienceController::class, 'editExpSubmit'])->name('admin.edit-exp');
-    Route::get('/experience/delete-exp/{exp_id}', [experienceController::class, 'deleteExp'])->name('admin.delete-exp');
+    Route::controller(experienceController::class)->group(function () {
+        Route::get('/experience/create-exp', 'createExp')->name('admin.create-exp');
+        Route::post('/experience/create-exp', 'createExpSubmit')->name('admin.create-exp');
+        Route::get('/experience/edit-exp/{exp_id}', 'editExp')->name('admin.edit-exp');
+        Route::post('/experience/edit-exp/{exp_id}', 'editExpSubmit')->name('admin.edit-exp');
+        Route::get('/experience/delete-exp/{exp_id}', 'deleteExp')->name('admin.delete-exp');
+    });
 
     // Service
-    Route::get('/service/create-service', [serviceController::class, 'createService'])->name('admin.create-service');
-    Route::post('/service/create-service', [serviceController::class, 'createServiceSubmit'])->name('admin.create-service');
-    Route::get('/service/edit-service/{ser_id}', [serviceController::class, 'editService'])->name('admin.edit-service');
-    Route::post('/service/edit-service/{ser_id}', [serviceController::class, 'editServiceSubmit'])->name('admin.edit-service');
-    Route::get('/service/delete-exp/{ser_id}', [serviceController::class, 'deleteService'])->name('admin.delete-service');
+    Route::controller(serviceController::class)->group(function () {
+        Route::get('/service/create-service', 'createService')->name('admin.create-service');
+        Route::post('/service/create-service', 'createServiceSubmit')->name('admin.create-service');
+        Route::get('/service/edit-service/{ser_id}', 'editService')->name('admin.edit-service');
+        Route::post('/service/edit-service/{ser_id}', 'editServiceSubmit')->name('admin.edit-service');
+        Route::get('/service/delete-exp/{ser_id}', 'deleteService')->name('admin.delete-service');
+    });
 
     // Portfolio
-    Route::get('/portfolio/create-portfolio', [portfolioController::class, 'createPortfolio'])->name('admin.create-portfolio');
-    Route::post('/portfolio/create-portfolio', [portfolioController::class, 'createPortfolioSubmit'])->name('admin.create-portfolio');
-    Route::get('/portfolio/edit-portfolio/{port_id}', [portfolioController::class, 'editPortfolio'])->name('admin.edit-portfolio');
-    Route::post('/portfolio/edit-portfolio/{port_id}', [portfolioController::class, 'editPortfolioSubmit'])->name('admin.edit-portfolio');
-    Route::get('/portfolio/delete-portfolio/{port_id}', [portfolioController::class, 'deletePortfolio'])->name('admin.delete-portfolio');
+    Route::controller(portfolioController::class)->group(function () {
+        Route::get('/portfolio/create-portfolio', 'createPortfolio')->name('admin.create-portfolio');
+        Route::post('/portfolio/create-portfolio', 'createPortfolioSubmit')->name('admin.create-portfolio');
+        Route::get('/portfolio/edit-portfolio/{port_id}', 'editPortfolio')->name('admin.edit-portfolio');
+        Route::post('/portfolio/edit-portfolio/{port_id}', 'editPortfolioSubmit')->name('admin.edit-portfolio');
+        Route::get('/portfolio/delete-portfolio/{port_id}', 'deletePortfolio')->name('admin.delete-portfolio');
+    });
 
-    // Blog
-    Route::get('/blog/create-blog', [blogController::class, 'createBlog'])->name('admin.create-blog');
-    Route::post('/blog/create-blog', [blogController::class, 'createBlogSubmit'])->name('admin.create-blog');
-    Route::get('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlog'])->name('admin.edit-blog');
-    Route::post('/blog/edit-blog/{blog_id}', [blogController::class, 'editBlogSubmit'])->name('admin.edit-blog');
-    Route::get('/blog/delete-blog/{blog_id}', [blogController::class, 'deleteBlog'])->name('admin.
-    delete-blog');
+    // Blog    
+    Route::controller(blogController::class)->group(function () {
+        Route::get('/blog/create-blog', 'createBlog')->name('admin.create-blog');
+        Route::post('/blog/create-blog', 'createBlogSubmit')->name('admin.create-blog');
+        Route::get('/blog/edit-blog/{blog_id}', 'editBlog')->name('admin.edit-blog');
+        Route::post('/blog/edit-blog/{blog_id}', 'editBlogSubmit')->name('admin.edit-blog');
+        Route::get('/blog/delete-blog/{blog_id}', 'deleteBlog')->name('admin.delete-blog');
+    });
 
     // Contact
-    Route::get('/contact/view-contact', [contactController::class, 'viewContact'])->name('admin.view-contact');
-    Route::post('/contact/view-contact', [aboutController::class, 'contactSubmit'])->name('admin.submit-contact');
-    Route::get('/contact/delete-message/{msg_id}', [contactController::class, 'deleteMessage'])->name('admin.delete-message');
+    Route::controller(contactController::class)->group(function () {
+        Route::get('/contact/view-contact', 'viewContact')->name('admin.view-contact');
+        Route::post('/contact/view-contact', 'contactSubmit')->name('admin.submit-contact');
+        Route::get('/contact/delete-message/{msg_id}', 'deleteMessage')->name('admin.delete-message');
+    });
 });
 
 //Public Routes
-Route::get('/', [publicController::class, 'index'])->name('public.index');
+Route::controller(publicController::class)->group(function () {
+    Route::get('/', 'index')->name('public.index');
+});

@@ -15,4 +15,9 @@ class publicController extends Controller
         $skills = skill::where('status', '=', 'Active')->orderBy('sort')->get()->take(4);
         return view("public.index", compact('about', 'skills'));
     }
+
+    public function about()
+    {
+        echo "ok";
+    }
 }
