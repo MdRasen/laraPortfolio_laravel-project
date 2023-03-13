@@ -9,16 +9,16 @@
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Interface</div>
-                <a class="nav-link {{ Request::is('admin/logo-fav') ? 'active' : '' }}"
-                    href="{{ route('admin.logo-fav') }}">
-                    <div class="sb-nav-link-icon"><i class="fa-solid fa-gear"></i></div>
-                    Logo & Favicon
-                </a>
-
                 <a class="nav-link {{ Request::is('admin/about/view-about') || Request::is('admin/about/edit-about') ? 'active' : '' }}"
                     href="{{ route('admin.view-about') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
                     About Me
+                </a>
+
+                <a class="nav-link {{ Request::is('admin/logo-fav') ? 'active' : '' }}"
+                    href="{{ route('admin.logo-fav') }}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-gear"></i></div>
+                    Logo & Favicon
                 </a>
 
                 <a class="nav-link {{ Request::is('admin/skills/view-skills') || Request::is('admin/skills/edit-skills/*') ? 'active' : '' }}"

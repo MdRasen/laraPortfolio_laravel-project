@@ -15,6 +15,19 @@ class aboutController extends Controller
         $about = about::where('created_by', '=', Auth::user()->id)->first();
         if (!$about) {
             $about = new about();
+            $about->full_name = "Mohammad Al Amin";
+            $about->nickname = "Aamin";
+            $about->designation = "Web Developer";
+            $about->short_description = "I'm a web designer with extensive experience for over 10 years. My expertise is to create and design website, graphic design, and many more...";
+            $about->birthday = "1999-07-22";
+            $about->age = "23";
+            $about->gender = "Male";
+            $about->email = "aamin.aiub@gmail.com";
+            $about->phone = "1630406235";
+            $about->degree = "BSc CSE";
+            $about->city = "Dhaka, Bangladesh";
+            $about->freelance = "Available";
+            $about->website_link = "www.aamin.com";
             $about->created_by = Auth::user()->id;
             $about->save();
         }

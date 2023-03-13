@@ -1,11 +1,11 @@
 <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2022</div>
+            <div class="text-muted">Copyright &copy; laraPortfolio {{ now()->year }}</div>
             <div>
-                <a href="#">Privacy Policy</a>
+                Developed By
                 &middot;
-                <a href="#">Terms &amp; Conditions</a>
+                <a href="https://www.facebook.com/itzAla71" target="_blank" style="text-decoration: none;">MdRasen</a>
             </div>
         </div>
     </div>

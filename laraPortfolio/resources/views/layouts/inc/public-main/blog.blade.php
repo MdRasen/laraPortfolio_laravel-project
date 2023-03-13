@@ -54,7 +54,7 @@
                         <div class="blog-info">
                             <div class="category">
                                 <a href="#">
-                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 01</p>
+                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> MdRasen</p>
                                 </a>
                             </div>
                             <div class="date">
@@ -80,7 +80,7 @@
                         <div class="blog-info">
                             <div class="category">
                                 <a href="#">
-                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 02</p>
+                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> MdRasen</p>
                                 </a>
                             </div>
                             <div class="date">
@@ -106,7 +106,7 @@
                         <div class="blog-info">
                             <div class="category">
                                 <a href="blog-single.html">
-                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 03</p>
+                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> MdRasen</p>
                                 </a>
                             </div>
                             <div class="date">
@@ -132,7 +132,7 @@
                         <div class="blog-info">
                             <div class="category">
                                 <a href="blog-single.html">
-                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 04</p>
+                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> MdRasen</p>
                                 </a>
                             </div>
                             <div class="date">
@@ -158,7 +158,7 @@
                         <div class="blog-info">
                             <div class="category">
                                 <a href="blog-single.html">
-                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 05</p>
+                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> MdRasen</p>
                                 </a>
                             </div>
                             <div class="date">
@@ -184,7 +184,7 @@
                         <div class="blog-info">
                             <div class="category">
                                 <a href="blog-single.html">
-                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> Category 06</p>
+                                    <p><i class="fa-sharp fa-solid fa-book-open-reader"></i> MdRasen</p>
                                 </a>
                             </div>
                             <div class="date">

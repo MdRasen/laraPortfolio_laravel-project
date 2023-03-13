@@ -19,6 +19,7 @@ class publicController extends Controller
     public function index()
     {
         $about = about::first();
+        // echo $about;
         $skills = skill::where('status', '=', 'Active')->orderBy('sort')->get()->take(4);
         $educations = education::where('status', '=', 'Active')->orderBy('sort')->get()->take(3);
         $experiences = experience::where('status', '=', 'Active')->orderBy('sort')->get()->take(3);

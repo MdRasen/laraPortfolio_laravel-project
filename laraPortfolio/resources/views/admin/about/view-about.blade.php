@@ -19,18 +19,18 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-body text-center">
-                                    @if ($about->image == null)
+                                    {{-- @if ($about->image)
                                         <img src="{{ asset('public-assets/images/hero.jpg') }}" alt="admin avatar"
                                             class="img-fluid mt-5" style="height: 260px">
-                                    @else
-                                        <img src="{{ asset('storage/about_image') }}/{{ $about->image }}" alt="admin avatar"
-                                            class="img-fluid mt-5" style="height: 260px">
-                                    @endif
+                                    @else --}}
+                                    <img src="{{ asset('storage/about_image') }}/{{ $about->image }}" alt="admin avatar"
+                                        class="img-fluid mt-5" style="height: 260px">
+                                    {{-- @endif --}}
 
                                     <h5 class="mt-5">{{ $about->nickname != null ? $about->nickname : 'Atlas' }}</h5>
-                                    <p class="text-muted my-2">Admin, laraEshop</p>
+                                    <p class="text-muted my-2">Admin, laraPortfolio</p>
                                     <p class="text-muted my-2">
-                                        {{ $about->address != null ? $about->address : 'Address not updated!' }}</p>
+                                        {{ $about->city }}</p>
 
                                     <div class="pt-2">
                                         <form action="{{ route('admin.about.update-image') }}" method="POST"
@@ -59,12 +59,12 @@
                                     <div class="col-md-6">
                                         <p class="mb-0">Full Name</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->full_name != null ? $about->full_name : 'Atlas' }}</p>
+                                            {{ $about->full_name }}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="mb-0">Nickname</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->nickname != null ? $about->nickname : 'Atlas' }}</p>
+                                            {{ $about->nickname }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -72,15 +72,13 @@
                                     <div class="col-md-6">
                                         <p class="mb-0">Short Description</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->short_description != null
-                                                ? $about->short_description
-                                                : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam enim, itaque culpa expedita reiciendis voluptates.' }}
+                                            {{ $about->short_description }}
                                         </p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="mb-0">Designation</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->designation != null ? $about->designation : 'Web Developer' }}</p>
+                                            {{ $about->designation }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -88,24 +86,24 @@
                                     <div class="col-md-6">
                                         <p class="mb-0">Birthday</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->birthday != null ? $about->birthday : '25 July, 1999' }}</p>
+                                            {{ $about->birthday }}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="mb-0">Age</p>
-                                        <p class="text-muted mb-0">{{ $about->age != null ? $about->age : '23' }}</p>
+                                        <p class="text-muted mb-0">{{ $about->age }}</p>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p class="mb-0">Gender</p>
-                                        <p class="text-muted mb-0">{{ $about->gender != null ? $about->gender : 'Male' }}
+                                        <p class="text-muted mb-0">{{ $about->gender }}
                                         </p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="mb-0">Email</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->email != null ? $about->email : 'info@gmail.com' }}</p>
+                                            {{ $about->email }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -113,12 +111,12 @@
                                     <div class="col-md-6">
                                         <p class="mb-0">Phone</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->phone != null ? $about->phone : '123456789' }}</p>
+                                            {{ $about->phone }}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="mb-0">Degree</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->degree != null ? $about->degree : 'BSc CSE' }}</p>
+                                            {{ $about->degree }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -126,12 +124,12 @@
                                     <div class="col-md-6">
                                         <p class="mb-0">City</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->city != null ? $about->city : 'Dhaka, Bangladesh' }}</p>
+                                            {{ $about->city }}</p>
                                     </div>
                                     <div class="col-md-6">
                                         <p class="mb-0">Freelance</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->freelance != null ? $about->freelance : 'Available' }}</p>
+                                            {{ $about->freelance }}</p>
                                     </div>
                                 </div>
                                 <hr>
@@ -139,7 +137,7 @@
                                     <div class="col-md-6">
                                         <p class="mb-0">Website</p>
                                         <p class="text-muted mb-0">
-                                            {{ $about->website_link != null ? $about->website_link : 'www.domain.com' }}
+                                            {{ $about->website_link }}
                                         </p>
                                     </div>
                                     <div class="col-md-6">

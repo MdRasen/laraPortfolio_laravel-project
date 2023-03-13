@@ -32,16 +32,16 @@
                                 <p>Age : <span>{{ $about ? $about->age : '23' }}</span></p>
                             </div>
                             <div class="info-item padd-15">
-                                <p>Website : <span>{{ $about ? $about->website_link : 'www.domain.com' }}</span></p>
+                                <p>Website : <span>{{ $about ? $about->website_link : 'www.aamin.com' }}</span></p>
                             </div>
                             <div class="info-item padd-15">
-                                <p>Email : <span>{{ $about ? $about->email : 'aamin.hossen99@gmail.com' }}</span></p>
+                                <p>Email : <span>{{ $about ? $about->email : 'aamin.aiub@gmail.com' }}</span></p>
                             </div>
                             <div class="info-item padd-15">
                                 <p>Degree : <span>{{ $about ? $about->degree : 'BSc CSE' }}</span></p>
                             </div>
                             <div class="info-item padd-15">
-                                <p>Phone : <span>+880 {{ $about ? $about->phone : '1234567891' }}</span></p>
+                                <p>Phone : <span>+880 {{ $about ? $about->phone : '1630406235' }}</span></p>
                             </div>
                             <div class="info-item padd-15">
                                 <p>City : <span>{{ $about ? $about->city : 'Dhaka, Bangladesh' }}</span></p>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="row">
                             <div class="buttons padd-15">
-                                @if ($about->cv_file)
+                                @if ($about)
                                     <a href="{{ asset('storage/cv_file/') }}/{{ $about->cv_file }}" class="btn"
                                         download>Download
                                         CV</a>
@@ -138,10 +138,10 @@
                                         <div class="timeline-item">
                                             <div class="circle-dot"></div>
                                             <h3 class="timeline-date">
-                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                                <i class="fa fa-calendar"></i> 2019 - 2023
                                             </h3>
                                             <h4 class="timeline-title">
-                                                Master in Computer Science
+                                                Bachelor in CSE
                                             </h4>
                                             <p class="timeline-text">
                                                 Lorem ipsum dolor sit amet, consectetur
@@ -154,10 +154,10 @@
                                         <div class="timeline-item">
                                             <div class="circle-dot"></div>
                                             <h3 class="timeline-date">
-                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                                <i class="fa fa-calendar"></i> 2016 - 2018
                                             </h3>
                                             <h4 class="timeline-title">
-                                                Master in Computer Science
+                                                Higher Secondary
                                             </h4>
                                             <p class="timeline-text">
                                                 Lorem ipsum dolor sit amet, consectetur
@@ -170,10 +170,10 @@
                                         <div class="timeline-item">
                                             <div class="circle-dot"></div>
                                             <h3 class="timeline-date">
-                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                                <i class="fa fa-calendar"></i> 2014 - 2016
                                             </h3>
                                             <h4 class="timeline-title">
-                                                Master in Computer Science
+                                                Secondary
                                             </h4>
                                             <p class="timeline-text">
                                                 Lorem ipsum dolor sit amet, consectetur
@@ -215,10 +215,10 @@
                                         <div class="timeline-item">
                                             <div class="circle-dot"></div>
                                             <h3 class="timeline-date">
-                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                                <i class="fa fa-calendar"></i> 2023 - 2024
                                             </h3>
                                             <h4 class="timeline-title">
-                                                Master in Computer Science
+                                                Web Developer Intern
                                             </h4>
                                             <p class="timeline-text">
                                                 Lorem ipsum dolor sit amet, consectetur
@@ -231,10 +231,10 @@
                                         <div class="timeline-item">
                                             <div class="circle-dot"></div>
                                             <h3 class="timeline-date">
-                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                                <i class="fa fa-calendar"></i> 2019 - 2023
                                             </h3>
                                             <h4 class="timeline-title">
-                                                Master in Computer Science
+                                                Web Design
                                             </h4>
                                             <p class="timeline-text">
                                                 Lorem ipsum dolor sit amet, consectetur
@@ -247,10 +247,10 @@
                                         <div class="timeline-item">
                                             <div class="circle-dot"></div>
                                             <h3 class="timeline-date">
-                                                <i class="fa fa-calendar"></i> 2013 - 2015
+                                                <i class="fa fa-calendar"></i> 2018 - 2022
                                             </h3>
                                             <h4 class="timeline-title">
-                                                Master in Computer Science
+                                                Wordpress Developer
                                             </h4>
                                             <p class="timeline-text">
                                                 Lorem ipsum dolor sit amet, consectetur

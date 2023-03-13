@@ -13,7 +13,7 @@
             <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-phone"></i></div>
                 <h4>Call Us On</h4>
-                <p>+880 {{ $about ? $about->phone : '+880 1234567890' }}</p>
+                <p>+880 {{ $about ? $about->phone : '1630406235' }}</p>
             </div>
             <!-- Contact info item-->
             <div class="contact-info-item padd-15">
@@ -25,13 +25,13 @@
             <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-envelope"></i></div>
                 <h4>Email</h4>
-                <p>{{ $about ? $about->email : 'my-mail@gmail.com' }}</p>
+                <p>{{ $about ? $about->email : 'aamin.aiub@gmail.com' }}</p>
             </div>
             <!-- Contact info item-->
             <div class="contact-info-item padd-15">
                 <div class="icon"><i class="fa fa-globe-europe"></i></div>
                 <h4>Website</h4>
-                <p>{{ $about ? $about->website_link : 'www.mydomain.com' }}</p>
+                <p>{{ $about ? $about->website_link : 'www.aamin.com' }}</p>
             </div>
         </div>
         <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>

@@ -29,7 +29,7 @@
                         <div class="icon">
                             <i class="fa fa-mobile-alt"></i>
                         </div>
-                        <h4>Web Design</h4>
+                        <h4>App Development</h4>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Blanditiis pariatur consectetur doloremque.
@@ -42,7 +42,7 @@
                         <div class="icon">
                             <i class="fa fa-laptop-code"></i>
                         </div>
-                        <h4>Web Design</h4>
+                        <h4>Web Development</h4>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Blanditiis pariatur consectetur doloremque.
@@ -55,7 +55,7 @@
                         <div class="icon">
                             <i class="fa fa-palette"></i>
                         </div>
-                        <h4>Web Design</h4>
+                        <h4>UI/UX Design</h4>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Blanditiis pariatur consectetur doloremque.
@@ -81,7 +81,7 @@
                         <div class="icon">
                             <i class="fa fa-search"></i>
                         </div>
-                        <h4>Web Design</h4>
+                        <h4>SEO</h4>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Blanditiis pariatur consectetur doloremque.
@@ -94,7 +94,7 @@
                         <div class="icon">
                             <i class="fa fa-bullhorn"></i>
                         </div>
-                        <h4>Web Design</h4>
+                        <h4>Promotion</h4>
                         <p>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Blanditiis pariatur consectetur doloremque.

@@ -17,7 +17,7 @@
                                     @if ($about)
                                         {{ $about->nickname }}
                                     @else
-                                        Atlas
+                                        Aamin
                                     @endif
                                 </h3>
                             </div>
@@ -28,7 +28,7 @@
                                         <div class="form-group">
                                             <label>Nickname</label>
                                             <input type="text" class="form-control" name="nickname"
-                                                value="{{ $about ? $about->nickname : 'Atlas' }}" placeholder="Nickname">
+                                                value="{{ $about ? $about->nickname : 'Aamin' }}" placeholder="Nickname">
                                             <p style="color:red;">
                                                 @error('nickname')
                                                     *{{ $message }}

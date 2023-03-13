@@ -4,7 +4,7 @@
         <div class="row">
             <div class="home-info padd-15">
                 <h3 class="hello">
-                    Hello, my name is <span class="name">{{ $about ? $about->full_name : 'Alini Mousaad' }}</span>
+                    Hello, my name is <span class="name">{{ $about ? $about->full_name : 'Mohammad Al Amin' }}</span>
                 </h3>
                 <h3 class="my-profession">
                     I'm a <span class="typing">{{ $about ? $about->designation : 'Web Designer' }}</span>
@@ -14,7 +14,7 @@
                         ? $about->short_description
                         : 'I&#39;m a web designer with extensive experience for over 10 years. My expertise is to create and design website, graphic design, and many more...' !!}
                 </p>
-                @if ($about->cv_file)
+                @if ($about)
                     <a href="{{ asset('storage/cv_file/') }}/{{ $about->cv_file }}" class="btn" download>Download
                         CV</a>
                 @else
@@ -23,7 +23,7 @@
                 @endif
             </div>
             <div class="home-img padd-15">
-                @if ($about->image)
+                @if ($about)
                     <img src="{{ asset('storage/about_image/') }}/{{ $about->image }}" alt="hero" />
                 @else
                     <img src="{{ asset('public-assets/images/hero.jpg') }}" alt="hero" />
