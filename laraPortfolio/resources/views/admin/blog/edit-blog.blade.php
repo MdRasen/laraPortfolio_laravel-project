@@ -86,7 +86,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <button type="submit" class="btn btn-primary mr-2">Update Blog</button>
-                                        <a href="#" class="btn btn-light">Cancel</a>
+                                        <a href="{{ route('admin.create-blog') }}" class="btn btn-light">Cancel</a>
                                     </div>
                                 </div>
                         </form>

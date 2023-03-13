@@ -80,7 +80,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <button type="submit" class="btn btn-primary mr-2">Update Skill</button>
-                                                <a href="#" class="btn btn-light">Cancel</a>
+                                                <a href="{{ route('admin.view-skills') }}" class="btn btn-light">Cancel</a>
                                             </div>
                                         </div>
                                     </form>

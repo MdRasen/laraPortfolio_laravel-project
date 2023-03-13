@@ -99,7 +99,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <button type="submit" class="btn btn-primary mr-2">Update Education</button>
-                                    <a href="#" class="btn btn-light">Cancel</a>
+                                    <a href="{{ route('admin.create-edu') }}" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
                         </form>

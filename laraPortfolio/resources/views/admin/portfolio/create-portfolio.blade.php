@@ -72,7 +72,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <button type="submit" class="btn btn-primary mr-2">Create Portfolio</button>
-                                    <a href="#" class="btn btn-light">Cancel</a>
+                                    <a href="{{ route('admin.dashboard') }}" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
                         </form>

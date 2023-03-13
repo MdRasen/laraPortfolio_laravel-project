@@ -74,7 +74,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <button type="submit" class="btn btn-primary mr-2">Update Portfolio</button>
-                                    <a href="#" class="btn btn-light">Cancel</a>
+                                    <a href="{{ route('admin.create-portfolio') }}" class="btn btn-light">Cancel</a>
                                 </div>
                             </div>
                         </form>
