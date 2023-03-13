@@ -122,8 +122,15 @@
                                                 <div class="circle-dot"></div>
                                                 <h3 class="timeline-date">
                                                     <i class="fa fa-calendar"></i>
+                                                    @php
+                                                        if ($item->end_date === 'Present') {
+                                                            $end_date = 'Present';
+                                                        } else {
+                                                            $end_date = substr($item->end_date, 0, 4);
+                                                        }
+                                                    @endphp
                                                     {{ substr($item->start_date, 0, 4) }} -
-                                                    {{ substr($item->end_date, 0, 4) }}
+                                                    {{ $end_date }}
                                                 </h3>
                                                 <h4 class="timeline-title">
                                                     {{ $item->exam_name }}
@@ -199,8 +206,15 @@
                                                 <div class="circle-dot"></div>
                                                 <h3 class="timeline-date">
                                                     <i class="fa fa-calendar"></i>
+                                                    @php
+                                                        if ($item->end_date === 'Present') {
+                                                            $end_date = 'Present';
+                                                        } else {
+                                                            $end_date = substr($item->end_date, 0, 4);
+                                                        }
+                                                    @endphp
                                                     {{ substr($item->start_date, 0, 4) }} -
-                                                    {{ substr($item->end_date, 0, 4) }}
+                                                    {{ $end_date }}
                                                 </h3>
                                                 <h4 class="timeline-title">
                                                     {{ $item->experience_name }}

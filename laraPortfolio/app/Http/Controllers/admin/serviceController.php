@@ -24,7 +24,7 @@ class serviceController extends Controller
             [
                 "service_name" => "required|string|regex:/^[A-Z a-z,.-]+$/i",
                 "icon_class" => "required",
-                "short_desc" => "required|string",
+                "short_desc" => "required|string|max:190",
                 "sort" => "required|numeric",
             ],
             [
@@ -57,7 +57,7 @@ class serviceController extends Controller
             [
                 "service_name" => "required|string|regex:/^[A-Z a-z,.-]+$/i",
                 "icon_class" => "required",
-                "short_desc" => "required|string",
+                "short_desc" => "required|string|max:190",
                 "sort" => "required|numeric",
             ],
             [

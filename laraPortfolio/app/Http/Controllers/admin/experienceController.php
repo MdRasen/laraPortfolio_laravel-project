@@ -23,8 +23,7 @@ class experienceController extends Controller
             [
                 "exp_name" => "required|string|regex:/^[A-Z a-z,.-]+$/i",
                 "start_date" => "required",
-                "end_date" => "required",
-                "short_desc" => "required|string",
+                "short_desc" => "required|string|max:190",
                 "sort" => "required|numeric",
             ],
             [
@@ -35,7 +34,11 @@ class experienceController extends Controller
         $exp = new experience();
         $exp->experience_name = $req->exp_name;
         $exp->start_date = $req->start_date;
-        $exp->end_date = $req->end_date;
+        if ($req->end_date) {
+            $exp->end_date = $req->end_date;
+        } else {
+            $exp->end_date = "Present";
+        }
         $exp->short_desc = $req->short_desc;
         $exp->sort = $req->sort;
         $exp->status = $req->status;
@@ -58,8 +61,7 @@ class experienceController extends Controller
             [
                 "exp_name" => "required|string|regex:/^[A-Z a-z,.-]+$/i",
                 "start_date" => "required",
-                "end_date" => "required",
-                "short_desc" => "required|string",
+                "short_desc" => "required|string|max:190",
                 "sort" => "required|numeric",
             ],
             [
@@ -70,7 +72,11 @@ class experienceController extends Controller
         $exp = experience::where('id', '=', $req->exp_id)->first();
         $exp->experience_name = $req->exp_name;
         $exp->start_date = $req->start_date;
-        $exp->end_date = $req->end_date;
+        if ($req->end_date) {
+            $exp->end_date = $req->end_date;
+        } else {
+            $exp->end_date = "Present";
+        }
         $exp->short_desc = $req->short_desc;
         $exp->sort = $req->sort;
         $exp->status = $req->status;

@@ -23,8 +23,7 @@ class educationController extends Controller
             [
                 "exam_name" => "required|string|regex:/^[A-Z a-z,.-]+$/i",
                 "start_date" => "required",
-                "end_date" => "required",
-                "short_desc" => "required|string",
+                "short_desc" => "required|string|max:190",
                 "sort" => "required|numeric",
             ],
             [
@@ -35,7 +34,11 @@ class educationController extends Controller
         $education = new education();
         $education->exam_name = $req->exam_name;
         $education->start_date = $req->start_date;
-        $education->end_date = $req->end_date;
+        if ($req->end_date) {
+            $education->end_date = $req->end_date;
+        } else {
+            $education->end_date = "Present";
+        }
         $education->short_desc = $req->short_desc;
         $education->sort = $req->sort;
         $education->status = $req->status;
@@ -58,8 +61,7 @@ class educationController extends Controller
             [
                 "exam_name" => "required|string|regex:/^[A-Z a-z,.-]+$/i",
                 "start_date" => "required",
-                "end_date" => "required",
-                "short_desc" => "required|string",
+                "short_desc" => "required|string|max:190",
                 "sort" => "required|numeric",
             ],
             [
@@ -70,7 +72,11 @@ class educationController extends Controller
         $education = education::where('id', '=', $req->edu_id)->first();
         $education->exam_name = $req->exam_name;
         $education->start_date = $req->start_date;
-        $education->end_date = $req->end_date;
+        if ($req->end_date) {
+            $education->end_date = $req->end_date;
+        } else {
+            $education->end_date = "Present";
+        }
         $education->short_desc = $req->short_desc;
         $education->sort = $req->sort;
         $education->status = $req->status;
