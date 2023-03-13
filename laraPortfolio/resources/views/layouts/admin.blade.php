@@ -15,6 +15,8 @@
     <!-- Summernote CSS Link -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('admin-assets/assets/img/fabicon.png') }}" />
 </head>
 
 <body class="sb-nav-fixed">
