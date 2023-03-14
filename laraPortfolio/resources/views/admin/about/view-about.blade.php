@@ -150,7 +150,9 @@
                                     <div class="justify-content-center">
                                         <a href="{{ route('admin.edit-about') }}" class="btn btn-primary mr-1">Edit
                                             Profile</a>
-                                        <button type="button" class="btn btn-outline-primary">Change Password</button>
+                                        <a href="{{ route('admin.change-password') }}"
+                                            class="btn btn-outline-primary">Change
+                                            Password</a>
                                     </div>
                                 </div>
                             </div>

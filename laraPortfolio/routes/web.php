@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\dashboardController;
 use App\Http\Controllers\admin\educationController;
 use App\Http\Controllers\admin\portfolioController;
 use App\Http\Controllers\admin\experienceController;
+use App\Http\Controllers\admin\passwordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,18 @@ Auth::routes();
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('admin.dashboard');
 
+    // Password Control
+    Route::controller(passwordController::class)->group(function () {
+        Route::get('/change-password', 'changePassword')->name('admin.change-password');
+        Route::post('/change-password', 'changePasswordSubmit')->name('admin.change-password');
+    });
+
     // Settings Control
-    Route::get('/logo-fav', [settingsController::class, 'logo_fav'])->name('admin.logo-fav');
-    Route::post('/logo', [settingsController::class, 'logo_update'])->name('admin.logo-update');
-    Route::post('/logo-fav', [settingsController::class, 'fav_update'])->name('admin.fav-update');
+    Route::controller(settingsController::class)->group(function () {
+        Route::get('/logo-fav', 'logo_fav')->name('admin.logo-fav');
+        Route::post('/logo', 'logo_update')->name('admin.logo-update');
+        Route::post('/logo-fav', 'fav_update')->name('admin.fav-update');
+    });
 
     // About Settings
     Route::controller(aboutController::class)->group(function () {

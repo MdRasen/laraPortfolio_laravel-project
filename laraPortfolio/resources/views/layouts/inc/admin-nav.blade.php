@@ -20,10 +20,10 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{{ route('public.index') }}"target="_blank">Live View</a></li>
                 <li><a class="dropdown-item" href="{{ route('admin.view-contact') }}">Messages</a></li>
+                <li><a class="dropdown-item" href="{{ route('admin.change-password') }}">Change Password</a></li>
                 <li>
                     <hr class="dropdown-divider" />
                 </li>
-                {{-- <li><a class="dropdown-item" href="#!">Logout</a></li> --}}
                 {{-- Logout - Auth Start --}}
                 <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}
